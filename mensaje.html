@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Envía un mensaje al anunciante en PI - Pisos &amp; Inmuebles">
+  <title>Enviar mensaje - PI Pisos &amp; Inmuebles</title>
+</head>
+<body>
+
+  <header>
+    <p><a href="index.html">PI Pisos &amp; Inmuebles</a></p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="busqueda.html">Buscar</a></li>
+        <li><a href="registro.html">Registrarse</a></li>
+        <li><a href="login.html">Iniciar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Enviar un mensaje al anunciante</h1>
+
+    <p>Anuncio: <a href="anuncio.html">Ático con terraza en el centro</a> (Alicante, España · 245.000 €)</p>
+    <p>Anunciante: mariagarcia</p>
+
+    <form action="404.html" method="post">
+      <fieldset>
+        <legend>Tipo de mensaje</legend>
+        <p>
+          <input type="radio" id="msg-tipo-oferta" name="tipo_mensaje" value="oferta">
+          <label for="msg-tipo-oferta">Comunicar una oferta</label>
+        </p>
+        <p>
+          <input type="radio" id="msg-tipo-info" name="tipo_mensaje" value="informacion" checked>
+          <label for="msg-tipo-info">Más información</label>
+        </p>
+        <p>
+          <input type="radio" id="msg-tipo-cita" name="tipo_mensaje" value="cita">
+          <label for="msg-tipo-cita">Solicitar una cita</label>
+        </p>
+      </fieldset>
+
+      <p>
+        <label for="msg-texto">Mensaje</label>
+        <textarea id="msg-texto" name="texto" rows="8" cols="60" maxlength="4000" required></textarea>
+      </p>
+
+      <p>
+        <button type="submit">Enviar mensaje</button>
+      </p>
+    </form>
+
+    <p><a href="anuncio.html">Volver al anuncio</a></p>
+  </main>
+
+  <footer>
+    <p>Autor: Ángel García García</p>
+    <p>Desarrollo de Aplicaciones Web - Universidad de Alicante</p>
+    <p><small>&copy; 2026 PI - Pisos &amp; Inmuebles. Todos los derechos reservados.</small></p>
+    <p><a href="404.html">Aviso legal</a> · <a href="404.html">Contacto</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Crea tu cuenta en PI - Pisos &amp; Inmuebles para publicar anuncios">
+  <title>Registro - PI Pisos &amp; Inmuebles</title>
+</head>
+<body>
+
+  <header>
+    <p><a href="index.html">PI Pisos &amp; Inmuebles</a></p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="busqueda.html">Buscar</a></li>
+        <li><a href="registro.html">Registrarse</a></li>
+        <li><a href="login.html">Iniciar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Registro de nuevo usuario</h1>
+    <p>Los campos marcados con * son obligatorios.</p>
+
+    <form action="indexlogueado.html" method="post" enctype="multipart/form-data">
+
+      <fieldset>
+        <legend>Datos de la cuenta</legend>
+        <p>
+          <label for="reg-usuario">Nombre de usuario *</label>
+          <input type="text" id="reg-usuario" name="usuario"
+                 minlength="3" maxlength="15"
+                 pattern="[A-Za-z][A-Za-z0-9]{2,14}"
+                 required>
+        </p>
+        <p>Entre 3 y 15 caracteres: letras sin tildes ni ñ y números. No puede empezar por un número.</p>
+
+        <p>
+          <label for="reg-clave">Contraseña *</label>
+          <input type="password" id="reg-clave" name="clave"
+                 minlength="6" maxlength="15"
+                 pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_\-]{6,15}"
+                 required>
+        </p>
+        <p>Entre 6 y 15 caracteres: letras sin tildes ni ñ, números, guion (-) y guion bajo (_). Debe incluir al menos una mayúscula, una minúscula y un número.</p>
+
+        <p>
+          <label for="reg-clave2">Repetir contraseña *</label>
+          <input type="password" id="reg-clave2" name="clave2"
+                 required>
+        </p>
+
+        <p>
+          <label for="reg-email">Correo electrónico *</label>
+          <input type="email" id="reg-email" name="email"
+                 maxlength="254"
+                 pattern="(?=[^@]{1,64}@)[A-Za-z0-9!#$%&amp;'*+\-\/=?^_`\{\|\}~]+(\.[A-Za-z0-9!#$%&amp;'*+\-\/=?^_`\{\|\}~]+)*@[A-Za-z0-9]([A-Za-z0-9\-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9\-]{0,61}[A-Za-z0-9])?)*"
+                 required>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Datos personales</legend>
+
+        <fieldset>
+          <legend>Sexo *</legend>
+          <p>
+            <input type="radio" id="reg-sexo-mujer" name="sexo" value="mujer" required>
+            <label for="reg-sexo-mujer">Mujer</label>
+            <input type="radio" id="reg-sexo-hombre" name="sexo" value="hombre">
+            <label for="reg-sexo-hombre">Hombre</label>
+            <input type="radio" id="reg-sexo-otro" name="sexo" value="otro">
+            <label for="reg-sexo-otro">Otro</label>
+          </p>
+        </fieldset>
+
+        <p>
+          <label for="reg-nacimiento">Fecha de nacimiento *</label>
+          <input type="date" id="reg-nacimiento" name="nacimiento"
+                 min="1900-01-01" max="2008-09-28"
+                 required>
+        </p>
+        <p>Debes ser mayor de 18 años para registrarte.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Residencia</legend>
+        <p>
+          <label for="reg-ciudad">Ciudad</label>
+          <input type="text" id="reg-ciudad" name="ciudad" maxlength="100">
+        </p>
+        <p>
+          <label for="reg-pais">País</label>
+          <select id="reg-pais" name="pais">
+            <option value="">-- Selecciona un país --</option>
+            <option value="DE">Alemania</option>
+            <option value="AR">Argentina</option>
+            <option value="BE">Bélgica</option>
+            <option value="CL">Chile</option>
+            <option value="CO">Colombia</option>
+            <option value="ES">España</option>
+            <option value="FR">Francia</option>
+            <option value="IT">Italia</option>
+            <option value="MX">México</option>
+            <option value="NL">Países Bajos</option>
+            <option value="PT">Portugal</option>
+            <option value="GB">Reino Unido</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Foto de perfil</legend>
+        <p>
+          <label for="reg-foto">Foto</label>
+          <input type="file" id="reg-foto" name="foto" accept="image/png, image/jpeg, image/webp">
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Crear cuenta</button>
+        <button type="reset">Borrar formulario</button>
+      </p>
+    </form>
+
+    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+  </main>
+
+  <footer>
+    <p>Autor: Ángel García García</p>
+    <p>Desarrollo de Aplicaciones Web - Universidad de Alicante</p>
+    <p><small>&copy; 2026 PI - Pisos &amp; Inmuebles. Todos los derechos reservados.</small></p>
+    <p><a href="404.html">Aviso legal</a> · <a href="404.html">Contacto</a></p>
+  </footer>
+
+</body>
+</html>
