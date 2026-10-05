@@ -5,21 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Mensajes enviados y recibidos en tu cuenta de PI - Pisos &amp; Inmuebles">
   <title>Mis mensajes - PI Pisos &amp; Inmuebles</title>
-  <style>
-    table, tr, th, td {
-      border: 1px solid black;
-    }
-  </style>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/estructura.css">
+  <link rel="stylesheet" href="css/formularios.css">
+  <link rel="stylesheet" href="css/tablas.css">
+  <link rel="stylesheet" href="css/adaptativo.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
 </head>
-<body>
+<body class="privada">
+  <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
 
   <header>
     <p><a href="indexlogueado.html">PI Pisos &amp; Inmuebles</a></p>
 
     <nav aria-label="Menú principal">
       <ul>
-        <li><a href="indexlogueado.html">Inicio</a></li>
-        <li><a href="busqueda.html">Buscar</a></li>
+        <li><a href="indexlogueado.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe88a;</span> Inicio</a></li>
+        <li><a href="busqueda.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe8b6;</span> Buscar</a></li>
       </ul>
     </nav>
   </header>
@@ -28,31 +31,35 @@
     <h2>Hola, usuario</h2>
     <nav aria-label="Menú de usuario">
       <ul>
-        <li><a href="404.html">Mis datos</a></li>
-        <li><a href="404.html">Mis anuncios</a></li>
-        <li><a href="404.html">Publicar anuncio</a></li>
-        <li><a href="mismensajes.html">Mis mensajes</a></li>
-        <li><a href="solicitarfolleto.html">Solicitar folleto</a></li>
-        <li><a href="404.html">Darme de baja</a></li>
-        <li><a href="index.html">Cerrar sesión</a></li>
+        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe7fd;</span> Mis datos</a></li>
+        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe88e;</span> Mis anuncios</a></li>
+        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe145;</span> Publicar anuncio</a></li>
+        <li><a href="mismensajes.html" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">&#xe158;</span> Mis mensajes</a></li>
+        <li><a href="solicitarfolleto.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe8ad;</span> Solicitar folleto</a></li>
+        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe872;</span> Darme de baja</a></li>
+        <li><a href="index.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe9ba;</span> Cerrar sesión</a></li>
       </ul>
     </nav>
   </aside>
 
-  <main>
+  <main id="contenido" tabindex="-1">
     <h1>Mis mensajes</h1>
     <p>Aquí puedes consultar los mensajes que has enviado a otros anunciantes y los que has recibido sobre tus anuncios.</p>
 
     <section>
-      <h2>Mensajes enviados</h2>
-      <table>
+      <h2 id="mensajes-enviados">Mensajes enviados</h2>
+      <div class="tabla-desplazable" role="region" aria-labelledby="mensajes-enviados" tabindex="0">
+      <table class="tabla-mensajes">
         <caption>Mensajes que has enviado a otros usuarios, del más reciente al más antiguo</caption>
+        <thead>
         <tr>
           <th scope="col">Tipo de mensaje</th>
           <th scope="col">Texto</th>
           <th scope="col">Fecha</th>
           <th scope="col">Destinatario</th>
         </tr>
+        </thead>
+        <tbody>
         <tr>
           <td>Más información</td>
           <td>Hola, ¿el ático incluye plaza de garaje? ¿Cuáles son los gastos de comunidad?</td>
@@ -71,19 +78,25 @@
           <td><time datetime="2026-09-28T21:03">28 de septiembre de 2026, 21:03</time></td>
           <td>inmobenidorm</td>
         </tr>
+        </tbody>
       </table>
+      </div>
     </section>
 
     <section>
-      <h2>Mensajes recibidos</h2>
-      <table>
+      <h2 id="mensajes-recibidos">Mensajes recibidos</h2>
+      <div class="tabla-desplazable" role="region" aria-labelledby="mensajes-recibidos" tabindex="0">
+      <table class="tabla-mensajes">
         <caption>Mensajes que otros usuarios te han enviado sobre tus anuncios, del más reciente al más antiguo</caption>
+        <thead>
         <tr>
           <th scope="col">Tipo de mensaje</th>
           <th scope="col">Texto</th>
           <th scope="col">Fecha</th>
           <th scope="col">Remitente</th>
         </tr>
+        </thead>
+        <tbody>
         <tr>
           <td>Solicitar una cita</td>
           <td>Buenas tardes, ¿podría ver la oficina el lunes a las 17:00?</td>
@@ -96,7 +109,9 @@
           <td><time datetime="2026-09-29T12:05">29 de septiembre de 2026, 12:05</time></td>
           <td>pablomartin</td>
         </tr>
+        </tbody>
       </table>
+      </div>
     </section>
   </main>
 
@@ -104,7 +119,7 @@
     <p>Autores: Ángel García García y Diego Patiño Pérez</p>
     <p>Desarrollo de Aplicaciones Web - Universidad de Alicante</p>
     <p><small>&copy; 2026 PI - Pisos &amp; Inmuebles. Todos los derechos reservados.</small></p>
-    <p><a href="404.html">Aviso legal</a> · <a href="404.html">Contacto</a></p>
+    <p><a href="404.html">Aviso legal</a> · <a href="404.html"><span aria-hidden="true">&#9993;</span> Contacto</a></p>
   </footer>
 
 </body>

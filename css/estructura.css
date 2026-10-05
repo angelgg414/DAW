@@ -62,3 +62,14 @@ body > footer {
   background: var(--color-secundario); border-top: 1px solid var(--color-borde);
 }
 footer p { margin-bottom: 0.4rem; }
+/* Menú privado: disponible también en las páginas incorporadas desde main. */
+body > aside {
+  width: min(calc(100% - 2rem), var(--ancho-contenido));
+  margin: 1.5rem auto 0; padding: 1rem;
+  border: 1px solid var(--color-borde); border-radius: var(--radio);
+  background: var(--color-secundario);
+}
+aside h2 { margin: 0 0 0.75rem; font: bold 1.1rem/1.4 var(--fuente-texto); }
+aside nav ul { display: flex; flex-wrap: wrap; gap: 0.25rem; margin: 0; padding: 0; list-style: none; }
+aside nav li { margin: 0; }
+aside nav a:hover, aside nav a[aria-current="page"] { background: var(--color-superficie); }

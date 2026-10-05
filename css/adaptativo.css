@@ -11,6 +11,17 @@
   .busqueda-rapida .campo button { grid-column: 2; grid-row: 2; }
 }
 @media (min-width: 64rem) {
+  body.privada {
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr) 14rem minmax(0, 76rem) minmax(1rem, 1fr);
+    grid-template-rows: auto 1fr auto;
+    column-gap: 0;
+  }
+  .privada > header, .privada > footer { grid-column: 1 / -1; }
+  .privada > aside { grid-column: 2; width: auto; margin: 2rem 0 3rem; align-self: start; }
+  .privada > main { grid-column: 3; width: auto; margin: 2rem 0 3rem 1.5rem; }
+  aside nav ul { flex-direction: column; }
+  aside nav a { display: flex; }
   .anuncios, .galeria { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .detalle { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--espacio); }
   .detalle > h1, .detalle > section { grid-column: 1 / -1; }
@@ -20,6 +31,7 @@
 }
 @media (min-width: 90rem) {
   .anuncios { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .privada .anuncios { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 30rem) {
   body > header { gap: 0.75rem; }

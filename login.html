@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/tablas.css">
   <link rel="stylesheet" href="css/adaptativo.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
+  <script src="js/acceso.js" defer></script>
 </head>
 <body>
   <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
@@ -31,7 +32,7 @@
   <main id="contenido" tabindex="-1">
     <h1>Iniciar sesión</h1>
 
-    <form action="indexlogueado.html" method="post">
+    <form action="indexlogueado.html" method="post" data-acceso-estatico>
       <p class="campo">
         <label for="login-usuario">Nombre de usuario</label>
         <input type="text" id="login-usuario" name="usuario" required>

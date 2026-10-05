@@ -6,3 +6,12 @@ thead th { color: var(--color-superficie); background: var(--color-principal); }
 th:first-child { width: 65%; }
 tbody tr:nth-child(even) { background: var(--color-secundario); }
 tbody tr:hover { background: var(--color-fondo); }
+/* Cuatro columnas en las tablas de mensajes, frente a dos en las tarifas. */
+.tabla-desplazable { max-width: 100%; overflow-x: auto; }
+.tabla-mensajes { max-width: none; min-width: 40rem; }
+.tabla-mensajes th:first-child { width: 20%; }
+.tabla-mensajes th:nth-child(2) { width: 40%; }
+.tabla-mensajes th:nth-child(3), .tabla-mensajes th:nth-child(4) { width: 20%; }
+@media (max-width: 40rem) {
+  .tabla-mensajes th, .tabla-mensajes td { padding: 0.5rem; font-size: 0.875rem; }
+}
