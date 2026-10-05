@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/tablas.css">
   <link rel="stylesheet" href="css/adaptativo.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
-  <script src="js/acceso.js" defer></script>
 </head>
 <body>
   <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
@@ -33,7 +32,7 @@
     <h1>Registro de nuevo usuario</h1>
     <p>Los campos marcados con * son obligatorios.</p>
 
-    <form action="indexlogueado.html" method="post" enctype="multipart/form-data" data-acceso-estatico>
+    <form action="indexlogueado.html" method="get">
 
       <fieldset>
         <legend>Datos de la cuenta</legend>
@@ -48,7 +47,8 @@
 
         <p class="campo">
           <label for="reg-clave">Contraseña *</label>
-          <input type="password" id="reg-clave" name="clave"
+          <!-- Las contraseñas no tienen name para excluirlas del envío GET simulado. -->
+          <input type="password" id="reg-clave"
                  minlength="6" maxlength="15"
                  pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_\-]{6,15}"
                  required>
@@ -57,7 +57,7 @@
 
         <p class="campo">
           <label for="reg-clave2">Repetir contraseña *</label>
-          <input type="password" id="reg-clave2" name="clave2"
+          <input type="password" id="reg-clave2"
                  required>
         </p>
 

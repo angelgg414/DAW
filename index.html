@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/tablas.css">
   <link rel="stylesheet" href="css/adaptativo.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
-  <script src="js/acceso.js" defer></script>
 </head>
 <body>
   <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
@@ -30,14 +29,15 @@
 
     <section>
       <h2>Acceso de usuarios</h2>
-      <form action="indexlogueado.html" method="post" data-acceso-estatico>
+      <form action="indexlogueado.html" method="get">
         <p class="campo">
           <label for="login-usuario">Usuario</label>
           <input type="text" id="login-usuario" name="usuario" required>
         </p>
         <p class="campo">
           <label for="login-clave">Contraseña</label>
-          <input type="password" id="login-clave" name="clave" required>
+          <!-- Sin name en esta simulación para no incluir la contraseña en la URL. -->
+          <input type="password" id="login-clave" required>
         </p>
         <p class="acciones">
           <button type="submit">Entrar</button>

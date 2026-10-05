@@ -207,9 +207,14 @@
 
         <p class="campo">
           <label for="resolucion">Resolución de las fotos: (*)</label>
-          <input type="range" id="resolucion" name="resolucion" min="150" max="900" step="150" value="150"
-            oninput="valorResolucion.value = resolucion.value">
-          <span><output id="valorResolucion">150</output> DPI</span>
+          <select id="resolucion" name="resolucion" required>
+            <option value="150">150 DPI</option>
+            <option value="300">300 DPI</option>
+            <option value="450">450 DPI</option>
+            <option value="600">600 DPI</option>
+            <option value="750">750 DPI</option>
+            <option value="900">900 DPI</option>
+          </select>
         </p>
 
         <p class="campo">
