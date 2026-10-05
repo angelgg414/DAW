@@ -5,22 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Envía un mensaje al anunciante en PI - Pisos &amp; Inmuebles">
   <title>Enviar mensaje - PI Pisos &amp; Inmuebles</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/estructura.css">
+  <link rel="stylesheet" href="css/formularios.css">
+  <link rel="stylesheet" href="css/tablas.css">
+  <link rel="stylesheet" href="css/adaptativo.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
 </head>
 <body>
+  <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
 
   <header>
     <p><a href="index.html">PI Pisos &amp; Inmuebles</a></p>
-    <nav>
+    <nav aria-label="Navegación principal">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="busqueda.html">Buscar</a></li>
-        <li><a href="registro.html">Registrarse</a></li>
-        <li><a href="login.html">Iniciar sesión</a></li>
+        <li><a href="index.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe88a;</span> Inicio</a></li>
+        <li><a href="busqueda.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe8b6;</span> Buscar</a></li>
+        <li><a href="registro.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe7fe;</span> Registrarse</a></li>
+        <li><a href="login.html"><span class="material-symbols-outlined" aria-hidden="true">&#xea77;</span> Iniciar sesión</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main id="contenido" tabindex="-1">
     <h1>Enviar un mensaje al anunciante</h1>
 
     <p>Anuncio: <a href="anuncio.html">Ático con terraza en el centro</a> (Alicante, España · 245.000 €)</p>
@@ -43,12 +51,12 @@
         </p>
       </fieldset>
 
-      <p>
+      <p class="campo">
         <label for="msg-texto">Mensaje</label>
         <textarea id="msg-texto" name="texto" rows="8" cols="60" maxlength="4000" required></textarea>
       </p>
 
-      <p>
+      <p class="acciones">
         <button type="submit">Enviar mensaje</button>
       </p>
     </form>
@@ -60,7 +68,7 @@
     <p>Autores: Ángel García García y Diego Patiño Pérez</p>
     <p>Desarrollo de Aplicaciones Web - Universidad de Alicante</p>
     <p><small>&copy; 2026 PI - Pisos &amp; Inmuebles. Todos los derechos reservados.</small></p>
-    <p><a href="404.html">Aviso legal</a> · <a href="404.html">Contacto</a></p>
+    <p><a href="404.html">Aviso legal</a> · <a href="404.html"><span aria-hidden="true">&#9993;</span> Contacto</a></p>
   </footer>
 
 </body>

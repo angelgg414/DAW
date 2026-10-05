@@ -1,0 +1,14 @@
+/* Tema compartido: cambia estas variables para crear otras variantes. */
+:root {
+  --color-texto: #23352e;
+  --color-principal: #225b45;
+  --color-secundario: #e7efe9;
+  --color-fondo: #f6f5f0;
+  --color-superficie: #ffffff;
+  --color-borde: #bdcfc2;
+  --fuente-texto: Arial, Helvetica, sans-serif;
+  --fuente-titulos: Georgia, "Times New Roman", serif;
+  --ancho-contenido: 90rem;
+  --radio: 0.75rem;
+  --espacio: 1.5rem;
+}

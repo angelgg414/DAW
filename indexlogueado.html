@@ -7,21 +7,29 @@
   <meta name="description"
     content="PI - Pisos &amp; Inmuebles: anuncios de venta y alquiler de viviendas, oficinas, locales y garajes">
   <title>PI - Pisos &amp; Inmuebles</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/estructura.css">
+  <link rel="stylesheet" href="css/formularios.css">
+  <link rel="stylesheet" href="css/tablas.css">
+  <link rel="stylesheet" href="css/adaptativo.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
 </head>
 
 <body>
+  <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
 
   <header>
     <h1><a href="indexlogueado.html">PI Pisos &amp; Inmuebles</a></h1>
 
-    <nav>
+    <nav aria-label="Navegación principal">
       <ul>
-        <li><a href="indexlogueado.html">Inicio</a></li>
-        <li><a href="busqueda.html">Buscar</a></li>
-        <li><a href="404.html">Publicar anuncio</a></li>
-        <li><a href="404.html">Mis anuncios</a></li>
-        <li><a href="404.html">Mis mensajes</a></li>
-        <li><a href="solicitarfolleto.html">Solicitar folleto</a></li>
+        <li><a href="indexlogueado.html" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">&#xe88a;</span> Inicio</a></li>
+        <li><a href="busqueda.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe8b6;</span> Buscar</a></li>
+        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe145;</span> Publicar anuncio</a></li>
+        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe88e;</span> Mis anuncios</a></li>
+        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe158;</span> Mis mensajes</a></li>
+        <li><a href="solicitarfolleto.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe8ad;</span> Solicitar folleto</a></li>
       </ul>
     </nav>
 
@@ -34,12 +42,12 @@
     </section>
   </header>
 
-  <main>
+  <main id="contenido" tabindex="-1">
 
-    <section>
+    <section class="busqueda-rapida">
       <h2>Búsqueda rápida</h2>
       <form action="resultados.html" method="get">
-        <p>
+        <p class="campo">
           <label for="busqueda-rapida">Municipio, barrio o calle</label>
           <input type="search" id="busqueda-rapida" name="q" placeholder="Ej.: Alicante, Playa de San Juan">
           <button type="submit">Buscar</button>
@@ -48,10 +56,10 @@
       <p><a href="busqueda.html">Búsqueda avanzada</a></p>
     </section>
 
-    <section>
+    <section class="anuncios">
       <h2>Últimos anuncios</h2>
 
-      <article>
+      <article class="anuncio">
         <h3><a href="anuncio.html">Ático con terraza en el centro</a></h3>
         <figure>
           <img src="img/anuncio1.jpg" alt="Fachada del edificio del ático en Alicante" width="320" height="240">
@@ -61,7 +69,7 @@
         <p>Precio: <data value="245000">245.000 €</data></p>
       </article>
 
-      <article>
+      <article class="anuncio">
         <h3><a href="anuncio.html">Piso reformado a 200 m de la playa</a></h3>
         <figure>
           <img src="img/anuncio2.jpg" alt="Edificio de apartamentos junto a la playa de San Juan" width="320"
@@ -72,7 +80,7 @@
         <p>Precio: <data value="950">950 €/mes</data></p>
       </article>
 
-      <article>
+      <article class="anuncio">
         <h3><a href="anuncio.html">Oficina diáfana en zona financiera</a></h3>
         <figure>
           <img src="img/anuncio3.jpg" alt="Edificio de oficinas acristalado en Valencia" width="320" height="240">
@@ -82,7 +90,7 @@
         <p>Precio: <data value="1800">1.800 €/mes</data></p>
       </article>
 
-      <article>
+      <article class="anuncio">
         <h3><a href="anuncio.html">Local comercial a pie de calle</a></h3>
         <figure>
           <img src="img/anuncio4.jpg" alt="Local comercial con escaparate en Burdeos" width="320" height="240">
@@ -92,7 +100,7 @@
         <p>Precio: <data value="180000">180.000 €</data></p>
       </article>
 
-      <article>
+      <article class="anuncio">
         <h3><a href="anuncio.html">Plaza de garaje en el barrio de Alfama</a></h3>
         <figure>
           <img src="img/anuncio5.jpg" alt="Puerta de acceso al garaje en Lisboa" width="320" height="240">
@@ -109,7 +117,7 @@
     <p>Autores: Ángel García García y Diego Patiño Pérez</p>
     <p>Desarrollo de Aplicaciones Web - Universidad de Alicante</p>
     <p><small>&copy; 2026 PI - Pisos &amp; Inmuebles. Todos los derechos reservados.</small></p>
-    <p><a href="404.html">Aviso legal</a> · <a href="404.html">Contacto</a></p>
+    <p><a href="404.html">Aviso legal</a> · <a href="404.html"><span aria-hidden="true">&#9993;</span> Contacto</a></p>
   </footer>
 
 </body>

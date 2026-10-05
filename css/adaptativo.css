@@ -1,0 +1,32 @@
+/* Puntos de ruptura según el espacio que necesita el contenido. */
+@media (min-width: 40rem) {
+  .anuncios, .galeria { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .campo { grid-template-columns: 12rem minmax(0, 1fr); gap: 0.75rem 1rem; }
+  header section form { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; }
+  header section form .campo { display: grid; grid-template-columns: minmax(0, 1fr); flex: 1 1 12rem; }
+  header section form p { margin: 0; }
+  header section form + p { margin-top: 0.75rem; }
+  .busqueda-rapida .campo { grid-template-columns: minmax(0, 1fr) auto; }
+  .busqueda-rapida .campo label { grid-column: 1 / -1; }
+  .busqueda-rapida .campo button { grid-column: 2; grid-row: 2; }
+}
+@media (min-width: 64rem) {
+  .anuncios, .galeria { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .detalle { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--espacio); }
+  .detalle > h1, .detalle > section { grid-column: 1 / -1; }
+  .detalle > dl { align-content: start; }
+  .detalle > figure { grid-column: 2; grid-row: 2; }
+  .detalle > section { margin-top: 0; }
+}
+@media (min-width: 90rem) {
+  .anuncios { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 30rem) {
+  body > header { gap: 0.75rem; }
+  nav { flex-basis: 100%; }
+  nav a { padding: 0.6rem; }
+  dl { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; }
+  dd { margin-bottom: 0.75rem; }
+  th, td { padding: 0.6rem; }
+  .aviso { padding: 1rem; }
+}

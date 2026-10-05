@@ -1,0 +1,32 @@
+/* Las etiquetas ocupan la misma columna; las opciones mantienen su etiqueta. */
+form {
+  max-width: 58rem; margin: 1.5rem 0; padding: clamp(1rem, 3vw, 2rem);
+  background: var(--color-superficie); border: 1px solid var(--color-borde); border-radius: var(--radio);
+}
+form p { margin-bottom: 1.25rem; }
+form p:last-child { margin-bottom: 0; }
+.campo { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.5rem; align-items: center; }
+.campo > label { font-weight: bold; }
+input, select, textarea, button { font: inherit; }
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]), select, textarea {
+  width: 100%; min-width: 0; padding: 0.65rem 0.75rem;
+  color: var(--color-texto); background: var(--color-superficie);
+  border: 1px solid var(--color-borde); border-radius: 0.4rem;
+}
+textarea { resize: vertical; }
+input[type="radio"], input[type="checkbox"], input[type="range"] { accent-color: var(--color-principal); }
+input[type="radio"], input[type="checkbox"] { width: 1.1rem; height: 1.1rem; vertical-align: middle; }
+input[type="radio"] + label, input[type="checkbox"] + label { margin-right: 1rem; }
+input[type="color"] { max-width: 6rem; min-height: 3rem; }
+input[type="file"] { overflow: hidden; }
+.campo > output { grid-column: 1 / -1; }
+fieldset { min-width: 0; margin: 0 0 1.5rem; padding: 1rem; border: 1px solid var(--color-borde); border-radius: var(--radio); }
+legend { padding: 0 0.5rem; color: var(--color-principal); font-weight: bold; }
+.acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+button, input[type="submit"], input[type="reset"] {
+  min-height: 2.75rem; padding: 0.65rem 1.2rem; cursor: pointer;
+  border: 1px solid var(--color-principal); border-radius: 0.4rem;
+  color: var(--color-superficie); background: var(--color-principal); font-weight: bold;
+}
+button:hover, input[type="submit"]:hover { text-decoration: underline; }
+button[type="reset"], input[type="reset"] { color: var(--color-principal); background: var(--color-superficie); }
