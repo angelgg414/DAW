@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/tablas.css">
   <link rel="stylesheet" href="css/adaptativo.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
-  <script src="js/acceso.js" defer></script>
 </head>
 <body>
   <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
@@ -25,26 +24,10 @@
         <li><a href="index.html" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">&#xe88a;</span> Inicio</a></li>
         <li><a href="busqueda.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe8b6;</span> Buscar</a></li>
         <li><a href="registro.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe7fe;</span> Registrarse</a></li>
+        <li><a href="login.html"><span class="material-symbols-outlined" aria-hidden="true">&#xea77;</span> Iniciar sesión</a></li>
       </ul>
     </nav>
 
-    <section>
-      <h2>Acceso de usuarios</h2>
-      <form action="indexlogueado.html" method="post" data-acceso-estatico>
-        <p class="campo">
-          <label for="login-usuario">Usuario</label>
-          <input type="text" id="login-usuario" name="usuario" required>
-        </p>
-        <p class="campo">
-          <label for="login-clave">Contraseña</label>
-          <input type="password" id="login-clave" name="clave" required>
-        </p>
-        <p class="acciones">
-          <button type="submit">Entrar</button>
-        </p>
-      </form>
-      <p><a href="404.html">¿Has olvidado tu contraseña?</a> · <a href="registro.html">Crear una cuenta</a></p>
-    </section>
   </header>
 
   <main id="contenido" tabindex="-1">

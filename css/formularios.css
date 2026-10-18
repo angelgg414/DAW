@@ -21,7 +21,7 @@ input[type="color"] { max-width: 6rem; min-height: 3rem; }
 input[type="file"] { overflow: hidden; }
 .campo > output { grid-column: 1 / -1; }
 fieldset { min-width: 0; margin: 0 0 1.5rem; padding: 1rem; border: 1px solid var(--color-borde); border-radius: var(--radio); }
-legend { padding: 0 0.5rem; color: var(--color-principal); font-weight: bold; }
+legend { padding: 0 0.5rem; color: var(--color-texto); font-weight: bold; }
 .acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 button, input[type="submit"], input[type="reset"] {
   min-height: 2.75rem; padding: 0.65rem 1.2rem; cursor: pointer;

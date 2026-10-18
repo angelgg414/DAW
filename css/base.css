@@ -20,7 +20,7 @@ li { margin-bottom: 0.35rem; }
 dl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 0.5rem 1rem; }
 dt { font-weight: bold; }
 dd { margin: 0; overflow-wrap: anywhere; }
-data { color: var(--color-principal); font-size: 1.25rem; font-weight: bold; }
+data { color: var(--color-texto); font-size: 1.25rem; font-weight: bold; }
 summary { cursor: pointer; color: var(--color-principal); font-weight: bold; }
 details { border-top: 1px solid var(--color-borde); padding-top: 0.75rem; }
 .saltar-contenido {

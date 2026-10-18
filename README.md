@@ -60,7 +60,7 @@ El formulario de `mensaje.html` apunta a `respuestamensaje.html` y usa GET para
 poder abrir esa página en un sitio estático. La confirmación y los mensajes son
 datos de ejemplo; todavía no hay almacenamiento ni envío real de mensajes.
 
-El acceso desde `index.html`, `login.html` y el registro usan `js/acceso.js` para
+El acceso desde `login.html` (única página de inicio de sesión) y el registro usan `js/acceso.js` para
 abrir `indexlogueado.html` después de la validación nativa del navegador. Así se
 evita el error HTTP 405 de un POST a un archivo HTML en un servidor estático,
 sin añadir las contraseñas a la URL. Requiere JavaScript y simula el acceso;
