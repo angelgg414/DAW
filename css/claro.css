@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/*
+ * Estilo predeterminado (hoja preferida, title="Estilo predeterminado").
+ * Solo define la paleta: el resto de hojas usa estas variables.
+ * Se desactiva cuando el usuario elige un estilo alternativo.
+ */
+:root {
+  --color-texto: #1e293b;
+  --color-principal: #1d4ed8;
+  --color-secundario: #eff6ff;
+  --color-fondo: #f8fafc;
+  --color-superficie: #ffffff;
+  --color-borde: #cbd5e1;
+}

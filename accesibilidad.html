@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Declaración de accesibilidad de PI Pisos &amp; Inmuebles">
+  <title>Declaración de accesibilidad - PI Pisos &amp; Inmuebles</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/estructura.css">
+  <link rel="stylesheet" href="css/formularios.css">
+  <link rel="stylesheet" href="css/tablas.css">
+  <link rel="stylesheet" href="css/adaptativo.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
+  <!-- Estilo predeterminado (preferido) y estilos alternativos: Ver > Estilo de página en Firefox -->
+  <link rel="stylesheet" href="css/claro.css" media="screen" title="Estilo predeterminado">
+  <link rel="alternate stylesheet" href="css/noche.css" media="screen" title="Modo noche">
+  <link rel="alternate stylesheet" href="css/contraste.css" media="screen" title="Alto contraste">
+  <link rel="alternate stylesheet" href="css/claro.css" media="screen" title="Letra grande">
+  <link rel="alternate stylesheet" href="css/letragrande.css" media="screen" title="Letra grande">
+  <link rel="alternate stylesheet" href="css/contraste.css" media="screen" title="Alto contraste y letra grande">
+  <link rel="alternate stylesheet" href="css/letragrande.css" media="screen" title="Alto contraste y letra grande">
+  <link rel="alternate stylesheet" href="css/impresion.css" media="screen" title="Vista previa de impresión">
+  <!-- Impresión: sin title para que se aplique siempre al imprimir -->
+  <link rel="stylesheet" href="css/impresion.css" media="print">
+</head>
+<body>
+  <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
+
+  <header>
+    <p><a href="index.html">PI Pisos &amp; Inmuebles</a></p>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe88a;</span> Inicio</a></li>
+        <li><a href="busqueda.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe8b6;</span> Buscar</a></li>
+        <li><a href="registro.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe7fe;</span> Registrarse</a></li>
+        <li><a href="login.html"><span class="material-symbols-outlined" aria-hidden="true">&#xea77;</span> Iniciar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido" tabindex="-1" class="aviso">
+    <h1>Declaración de accesibilidad</h1>
+
+    <p>
+      PI Pisos &amp; Inmuebles se compromete a que su sitio web sea accesible
+      para el mayor número de personas, con independencia de sus capacidades
+      y del dispositivo que utilicen. Esta declaración se aplica a todas las
+      páginas del sitio.
+    </p>
+
+    <section>
+      <h2>Situación de cumplimiento</h2>
+      <p>
+        El sitio es <strong>parcialmente conforme</strong> con el nivel AA de las
+        <a href="https://www.w3.org/TR/WCAG21/">Pautas de Accesibilidad para el
+        Contenido Web (WCAG) 2.1</a>, debido a las limitaciones que se indican
+        más abajo.
+      </p>
+    </section>
+
+    <section>
+      <h2>Características de accesibilidad</h2>
+
+      <h3>Etiquetado semántico</h3>
+      <p>
+        Todas las páginas declaran el idioma español (<code>lang="es"</code>) y
+        usan las etiquetas de HTML según su significado: <code>header</code>,
+        <code>nav</code>, <code>main</code>, <code>aside</code> y <code>footer</code>
+        para las zonas de la página; <code>article</code> y <code>section</code>
+        para los anuncios y sus apartados; listas de definición (<code>dl</code>)
+        para los datos de cada anuncio, y <code>time</code> y <code>data</code>
+        para fechas y precios. Los títulos siguen un orden jerárquico, de modo
+        que la página tiene sentido leída de forma lineal o sin hojas de estilo.
+      </p>
+
+      <h3>Texto alternativo de las imágenes</h3>
+      <p>
+        Todas las fotografías de los anuncios tienen un texto alternativo
+        (<code>alt</code>) que describe lo que muestran. Los iconos de la
+        navegación son decorativos: están ocultos para los lectores de pantalla
+        (<code>aria-hidden="true"</code>) y cada enlace conserva su texto.
+      </p>
+
+      <h3>Uso correcto de los colores</h3>
+      <ul>
+        <li>
+          El texto del estilo predeterminado tiene un contraste de 14:1 con el
+          fondo y los enlaces de 6,4:1, por encima del mínimo de 4,5:1 que exige
+          el nivel AA.
+        </li>
+        <li>
+          El estilo de alto contraste alcanza al menos 7:1 en todas las
+          combinaciones de texto y fondo (nivel AAA).
+        </li>
+        <li>
+          La información no se transmite solo mediante el color: los enlaces se
+          subrayan, la página actual del menú aparece además en negrita y, en la
+          solicitud de folleto, los campos obligatorios se marcan con un
+          asterisco (*).
+        </li>
+      </ul>
+
+      <h3>Navegación con teclado</h3>
+      <p>
+        Al pulsar la tecla Tab al principio de cualquier página aparece el
+        enlace «Saltar al contenido principal», que lleva directamente al
+        contenido. Todos los elementos interactivos muestran un contorno
+        visible al recibir el foco.
+      </p>
+
+      <h3>Formularios y tablas</h3>
+      <p>
+        Cada campo de los formularios tiene una etiqueta (<code>label</code>)
+        asociada, y los grupos de opciones se agrupan con <code>fieldset</code>
+        y <code>legend</code>. Las tablas tienen título (<code>caption</code>) y
+        celdas de cabecera (<code>th</code>).
+      </p>
+
+      <h3>Diseño adaptable</h3>
+      <p>
+        La distribución se adapta al ancho de la pantalla, desde el móvil hasta
+        monitores grandes, y el tamaño del texto se define en unidades
+        relativas, por lo que se puede ampliar con el zoom del navegador sin
+        perder contenido.
+      </p>
+    </section>
+
+    <section>
+      <h2>Estilos alternativos y cómo activarlos</h2>
+      <p>Además del estilo predeterminado, el sitio ofrece estos estilos:</p>
+      <dl>
+        <dt>Modo noche</dt>
+        <dd>Fondo oscuro y texto gris claro para entornos con poca luz.</dd>
+        <dt>Alto contraste</dt>
+        <dd>Para personas con baja visión que necesitan más contraste.</dd>
+        <dt>Letra grande</dt>
+        <dd>
+          Aumenta el texto un 25 % y usa el tipo de letra Atkinson
+          Hyperlegible, diseñado para distinguir caracteres parecidos.
+        </dd>
+        <dt>Alto contraste y letra grande</dt>
+        <dd>Combina los dos estilos anteriores.</dd>
+        <dt>Vista previa de impresión</dt>
+        <dd>Muestra en pantalla cómo se imprimirá la página.</dd>
+      </dl>
+      <p>
+        Para activarlos en Mozilla Firefox, pulsa la tecla Alt para mostrar la
+        barra de menús y elige <strong>Ver &gt; Estilo de página</strong>.
+        Otros navegadores, como Google Chrome, no incluyen esta opción.
+      </p>
+      <p>
+        Al imprimir una página se aplica automáticamente un estilo específico
+        para papel: texto negro sobre blanco, sin menús ni buscadores y con la
+        dirección de cada enlace escrita a continuación.
+      </p>
+    </section>
+
+    <section>
+      <h2>Contenido no accesible</h2>
+      <ul>
+        <li>
+          El estilo elegido no se conserva al cambiar de página y no se puede
+          seleccionar desde navegadores sin la opción de estilos alternativos.
+          Se resolverá en una próxima versión.
+        </li>
+        <li>
+          Los iconos y el tipo de letra del estilo de letra grande se cargan
+          desde Google Fonts. Sin conexión, los iconos no se muestran (los
+          enlaces mantienen su texto) y se usa Verdana como tipo de letra.
+        </li>
+        <li>
+          Algunos enlaces llevan a una página provisional porque esas funciones
+          todavía no están disponibles.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Preparación de esta declaración</h2>
+      <p>
+        Esta declaración se preparó el
+        <time datetime="2026-10-25">25 de octubre de 2026</time> mediante una
+        autoevaluación de los propios autores del sitio.
+      </p>
+    </section>
+
+    <section>
+      <h2>Observaciones y contacto</h2>
+      <p>
+        Si encuentras alguna barrera de accesibilidad o necesitas un contenido
+        en otro formato, comunícanoslo a través del enlace de contacto del pie
+        de página.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Autores: Ángel García García y Diego Patiño Pérez</p>
+    <p>Desarrollo de Aplicaciones Web - Universidad de Alicante</p>
+    <p><small>&copy; 2026 PI - Pisos &amp; Inmuebles. Todos los derechos reservados.</small></p>
+    <p><a href="404.html">Aviso legal</a> · <a href="accesibilidad.html">Accesibilidad</a> · <a href="404.html"><span aria-hidden="true">&#9993;</span> Contacto</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/*
+ * Estilo alternativo «Letra grande» para personas con baja visión.
+ * No define colores: se combina con claro.css («Letra grande») o con
+ * contraste.css («Alto contraste y letra grande») mediante el mismo title.
+ *
+ * Atkinson Hyperlegible (Braille Institute) distingue 1, I, l y 0, O.
+ * Si no hay conexión, se usa Verdana, también de alta legibilidad.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+  --fuente-texto: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif;
+  --fuente-titulos: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif;
+}
+/* Todos los tamaños están en rem, así que escalan de forma proporcional. */
+html {
+  font-size: 125%;
+}
+body {
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  word-spacing: 0.05em;
+}
+/* Ningún texto por debajo del tamaño base. */
+small,
+figcaption,
+.tabla-mensajes th,
+.tabla-mensajes td {
+  font-size: 1rem;
+}
+/* Líneas de 70 caracteres como máximo y párrafos más separados. */
+main p,
+main li,
+main dd {
+  max-width: 70ch;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+/* Con letra mayor caben menos fichas por fila. */
+@media (min-width: 64rem) {
+  .privada .anuncios {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 90rem) {
+  .anuncios {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

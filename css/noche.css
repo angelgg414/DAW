@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*
+ * Estilo alternativo «Modo noche».
+ * Fondos oscuros de bajo brillo y texto gris claro (no blanco puro) para
+ * reducir la fatiga visual. Contrastes medidos con la fórmula de WCAG:
+ *   texto / fondo       14.5:1    principal / fondo       9.9:1
+ *   texto / superficie  11.9:1    principal / superficie  8.1:1
+ */
+:root {
+  color-scheme: dark; /* controles de formulario y barras de desplazamiento oscuros */
+  --color-texto: #e2e8f0;
+  --color-principal: #93c5fd;
+  --color-secundario: #1a2540;
+  --color-fondo: #0f172a;
+  --color-superficie: #1e293b;
+  --color-borde: #475569;
+}
+/* Las fotos muy claras deslumbran sobre fondo oscuro. */
+img {
+  filter: brightness(0.9);
+}

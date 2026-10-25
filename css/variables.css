@@ -1,11 +1,10 @@
-/* Tema compartido: cambia estas variables para crear otras variantes. */
+@charset "UTF-8";
+/*
+ * Variables comunes a todos los estilos (hoja persistente).
+ * Los colores están en claro.css (predeterminado), noche.css y
+ * contraste.css, y la impresión redefine todo en impresion.css.
+ */
 :root {
-  --color-texto: #1e293b;
-  --color-principal: #1d4ed8;
-  --color-secundario: #eff6ff;
-  --color-fondo: #f8fafc;
-  --color-superficie: #ffffff;
-  --color-borde: #cbd5e1;
   --fuente-texto: Arial, Helvetica, sans-serif;
   --fuente-titulos: Georgia, "Times New Roman", serif;
   --ancho-contenido: 90rem;

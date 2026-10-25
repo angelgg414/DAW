@@ -1,0 +1,227 @@
+@charset "UTF-8";
+/*
+ * Estilo para impresión (media="print", sin title: se aplica siempre al
+ * imprimir, sea cual sea el estilo de pantalla elegido).
+ * Páginas cuidadas: portada, resultados, detalle del anuncio y respuesta
+ * de la solicitud de folleto (justificante).
+ */
+@page {
+  size: A4;
+  margin: 2cm 1.8cm;
+}
+
+/* Papel: negro sobre blanco, unidades absolutas y texto con serifa. */
+:root {
+  --color-texto: #000000;
+  --color-principal: #000000;
+  --color-secundario: #ffffff;
+  --color-fondo: #ffffff;
+  --color-superficie: #ffffff;
+  --color-borde: #777777;
+  --fuente-texto: Georgia, "Times New Roman", serif;
+  --fuente-titulos: Arial, Helvetica, sans-serif;
+  --radio: 0;
+  --espacio: 0.5cm;
+}
+html,
+body {
+  color: #000000;
+  background: #ffffff;
+}
+body {
+  display: block;
+  min-height: 0;
+  font: 12pt/1.45 var(--fuente-texto);
+}
+h1 {
+  font-size: 20pt;
+}
+h2 {
+  font-size: 15pt;
+}
+h3 {
+  font-size: 13pt;
+}
+small,
+figcaption {
+  font-size: 10pt;
+}
+
+/* Control de los saltos de página. */
+h1,
+h2,
+h3,
+caption,
+dt {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+p,
+li,
+dd {
+  orphans: 3;
+  widows: 3;
+}
+figure,
+img,
+tr,
+dl,
+.anuncio {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/*
+ * Se elimina lo que no sirve en papel: navegación, menú de usuario,
+ * buscadores, botones, iconos y enlaces que solo sirven para navegar.
+ */
+.saltar-contenido,
+body > header nav,
+body > aside,
+.busqueda-rapida,
+form:has(input[type="search"]),
+button,
+input[type="submit"],
+input[type="reset"],
+.material-symbols-outlined,
+.anuncio ul,
+main > p:has(> a:only-child) {
+  display: none !important;
+}
+
+/* La cabecera queda como membrete con el nombre del sitio. */
+body > header {
+  display: block;
+  padding: 0 0 0.3cm;
+  background: none;
+  border-bottom: 1pt solid #000000;
+}
+header > h1,
+header > p {
+  font: bold 16pt/1.2 var(--fuente-titulos);
+}
+main,
+.privada > main {
+  width: auto;
+  margin: 0.6cm 0;
+}
+
+/* Enlaces: subrayados y con su dirección, porque en papel no se pulsan. */
+a {
+  color: #000000;
+  text-decoration: underline;
+}
+header a {
+  text-decoration: none;
+}
+main a[href]:not([href^="#"])::after,
+footer a[href]::after {
+  content: " (" attr(href) ")";
+  font: 9pt var(--fuente-titulos);
+  overflow-wrap: anywhere;
+}
+main .galeria a[href]::after {
+  content: none;
+}
+
+/* Fichas de anuncios en dos columnas, sin sombras ni esquinas. */
+.anuncios {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4cm;
+}
+.anuncio {
+  padding: 0.3cm;
+  border: 1pt solid #777777;
+}
+.anuncio figure {
+  margin: 0 0 0.2cm;
+}
+.anuncio img {
+  height: 5cm;
+}
+/* Desplegables abiertos: en papel no se pueden pulsar. */
+details::details-content {
+  content-visibility: visible;
+  display: block;
+}
+details {
+  border: 0;
+}
+summary {
+  color: #000000;
+  list-style: none;
+}
+
+/* Detalle del anuncio: foto principal y galería contenidas en la hoja. */
+.detalle {
+  display: block;
+  padding: 0;
+  border: 0;
+}
+.detalle > figure img {
+  width: auto;
+  max-width: 100%;
+  max-height: 9cm;
+  object-fit: contain;
+}
+.galeria {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.3cm;
+}
+dl {
+  grid-template-columns: 5cm minmax(0, 1fr);
+}
+
+/* Tablas: sin fondos (no se imprimen) y cabecera repetida en cada hoja. */
+thead {
+  display: table-header-group;
+}
+thead th {
+  color: #000000;
+  background: none;
+  border-bottom: 2pt solid #000000;
+}
+tbody tr:nth-child(even),
+tbody tr:hover {
+  background: none;
+}
+th,
+td {
+  padding: 0.15cm 0.2cm;
+  border: 1pt solid #777777;
+}
+.tabla-desplazable {
+  overflow: visible;
+}
+.tabla-mensajes {
+  min-width: 0;
+}
+
+/* Formularios que se imprimen para rellenar o como comprobante. */
+form,
+fieldset,
+.aviso {
+  border: 1pt solid #777777;
+  background: none;
+}
+input,
+select,
+textarea {
+  border: 1pt solid #000000;
+  background: none;
+}
+/* El color de portada elegido es un dato: se imprime aunque sea un fondo. */
+input[type="color"] {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Pie con los derechos de uso. */
+body > footer {
+  margin-top: 0.6cm;
+  padding: 0.3cm 0 0;
+  font-size: 9pt;
+  background: none;
+  border-top: 1pt solid #000000;
+}

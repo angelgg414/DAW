@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Las etiquetas ocupan la misma columna; las opciones mantienen su etiqueta. */
 form {
   max-width: 58rem;

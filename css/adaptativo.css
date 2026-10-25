@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Puntos de ruptura según el espacio que necesita el contenido. */
 @media (min-width: 40rem) {
   .anuncios,

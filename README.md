@@ -1,3 +1,33 @@
+# Práctica 5: CSS (2)
+
+Abre `index.html` en Mozilla Firefox y elige un estilo en **Ver > Estilo de
+página** (pulsa Alt si no ves la barra de menús). Chrome no tiene esta opción.
+
+## Estilos de la práctica 5
+
+| Estilo (title) | Tipo | Hojas |
+| --- | --- | --- |
+| *(sin título)* | Persistente | `variables`, `base`, `estructura`, `formularios`, `tablas`, `adaptativo` |
+| Estilo predeterminado | Preferida | `claro.css` |
+| Modo noche | Alternativa | `noche.css` |
+| Alto contraste | Alternativa | `contraste.css` |
+| Letra grande | Alternativa | `claro.css` + `letragrande.css` |
+| Alto contraste y letra grande | Alternativa | `contraste.css` + `letragrande.css` |
+| Vista previa de impresión | Alternativa | `impresion.css` (para comprobar la impresión en pantalla) |
+| *(sin título)* | Impresión (`media="print"`) | `impresion.css` |
+
+- Los colores salen de `variables.css` y pasan a la hoja de tema. Las hojas
+  persistentes solo usan variables, así que cada tema redefine la paleta sin
+  repetir reglas.
+- «Letra grande» y «Alto contraste y letra grande» reutilizan las mismas
+  hojas agrupándolas con el mismo `title`, en lugar de duplicar código.
+- Las hojas de pantalla llevan `media="screen"` para no interferir en la
+  impresión, y la de impresión no tiene `title` para aplicarse siempre.
+- Contrastes (WCAG): el estilo predeterminado ya cumple AA (texto 14:1,
+  enlaces 6,4:1), así que el de alto contraste se ha hecho para AAA (≥ 7:1).
+- `accesibilidad.html` es la declaración de accesibilidad, enlazada desde el
+  pie de todas las páginas.
+
 # Práctica 4: CSS (1)
 
 Abre `index.html` en un navegador para ver el sitio. Todas las páginas y la
@@ -59,12 +89,6 @@ mantener la legibilidad de sus cuatro columnas en móvil.
 El formulario de `mensaje.html` apunta a `respuestamensaje.html` y usa GET para
 poder abrir esa página en un sitio estático. La confirmación y los mensajes son
 datos de ejemplo; todavía no hay almacenamiento ni envío real de mensajes.
-
-El acceso desde `login.html` (única página de inicio de sesión) y el registro usan `js/acceso.js` para
-abrir `indexlogueado.html` después de la validación nativa del navegador. Así se
-evita el error HTTP 405 de un POST a un archivo HTML en un servidor estático,
-sin añadir las contraseñas a la URL. Requiere JavaScript y simula el acceso;
-todavía no verifica credenciales ni crea cuentas en un servidor.
 
 Se han comprobado los destinos de `href`, `src` y `action`, incluidos los
 fragmentos internos. Los enlaces a `404.html` de Mis datos, Mis anuncios,

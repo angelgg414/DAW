@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/*
+ * Estilo alternativo «Alto contraste» para personas con baja visión.
+ * El estilo predeterminado ya cumple WCAG 1.4.3 (AA, 4.5:1) en el texto,
+ * así que este estilo cumple 1.4.6 (AAA, 7:1) en todas las combinaciones:
+ *   texto / fondo       21:1      principal / fondo       11.8:1
+ *   texto / secundario  17.9:1    principal / secundario  10:1
+ * Además, los enlaces y el foco no dependen solo del color.
+ */
+:root {
+  --color-texto: #000000;
+  --color-principal: #0a2f8a;
+  --color-secundario: #e6edff;
+  --color-fondo: #ffffff;
+  --color-superficie: #ffffff;
+  --color-borde: #000000;
+}
+/* Todos los enlaces subrayados, también en la navegación y en las fichas. */
+a,
+nav a,
+header > h1 a,
+header > p a,
+.anuncio h3 a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+}
+/* Estados de ratón y teclado claramente distinguibles: colores invertidos. */
+a:hover,
+a:focus-visible,
+nav a:hover {
+  color: var(--color-superficie);
+  background: var(--color-texto);
+  text-decoration: none;
+}
+:focus-visible {
+  outline: 4px solid var(--color-texto);
+  outline-offset: 3px;
+}
+/* La página actual se marca con un borde, no solo con negrita y fondo. */
+nav a[aria-current="page"] {
+  outline: 2px solid var(--color-texto);
+}
+/* Bordes más gruesos para que los controles y las fichas se distingan. */
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not(
+    [type="reset"]
+  ),
+select,
+textarea,
+fieldset,
+.anuncio,
+.detalle,
+form {
+  border-width: 2px;
+}
+::placeholder {
+  color: #333333;
+  opacity: 1;
+}
