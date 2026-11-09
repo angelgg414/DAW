@@ -56,3 +56,34 @@ function redirigir(string $pagina, array $parametros = []): never
     header("Location: $url", true, 303);
     exit;
 }
+
+/**
+ * Países que se pueden elegir en los formularios: código => nombre.
+ * Una sola lista para todo el sitio (registro, búsqueda, folleto...).
+ */
+function obtenerPaises(): array
+{
+    return [
+        'DE' => 'Alemania',  'AR' => 'Argentina', 'BE' => 'Bélgica',      'CL' => 'Chile',
+        'CO' => 'Colombia',  'ES' => 'España',    'FR' => 'Francia',      'IT' => 'Italia',
+        'MX' => 'México',    'NL' => 'Países Bajos', 'PT' => 'Portugal',  'GB' => 'Reino Unido',
+    ];
+}
+
+/**
+ * Opciones de sexo del formulario de registro: valor => texto visible.
+ */
+function obtenerSexos(): array
+{
+    return ['mujer' => 'Mujer', 'hombre' => 'Hombre', 'otro' => 'Otro'];
+}
+
+/**
+ * Atributos de accesibilidad para un control con error:
+ * aria-invalid lo marca como erróneo y aria-describedby lo asocia a su mensaje.
+ * Devuelve '' si no hay error.
+ */
+function atributosError(?string $error, string $idCampo): string
+{
+    return $error === null ? '' : ' aria-invalid="true" aria-describedby="error-' . e($idCampo) . '"';
+}
