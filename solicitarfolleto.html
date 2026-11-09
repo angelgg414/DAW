@@ -24,6 +24,8 @@
   <link rel="alternate stylesheet" href="css/impresion.css" media="screen" title="Vista previa de impresión">
   <!-- Impresión: sin title para que se aplique siempre al imprimir -->
   <link rel="stylesheet" href="css/impresion.css" media="print">
+  <link rel="stylesheet" href="css/validacion.css">
+  <script src="js/folleto.js" defer></script>
 </head>
 
 <body class="privada">
@@ -114,6 +116,13 @@
           </tr>
         </tbody>
       </table>
+    </section>
+
+    <section aria-labelledby="titulo-costes">
+      <h2 id="titulo-costes">Posibles costes de un folleto</h2>
+      <p>Consulta los costes para folletos de 1 a 15 páginas, con tres fotos por página, según el color y la resolución. Los importes se calculan a partir de las tarifas anteriores.</p>
+      <p><button type="button" id="alternar-costes" aria-controls="contenedor-costes" aria-expanded="false">Mostrar tabla de costes</button></p>
+      <div id="contenedor-costes" class="tabla-desplazable" hidden></div>
     </section>
 
     <section>
@@ -218,8 +227,7 @@
 
         <p class="campo">
           <label for="resolucion">Resolución de las fotos: (*)</label>
-          <input type="range" id="resolucion" name="resolucion" min="150" max="900" step="150" value="150"
-            oninput="valorResolucion.value = resolucion.value">
+          <input type="range" id="resolucion" name="resolucion" min="150" max="900" step="150" value="150">
           <span><output id="valorResolucion">150</output> DPI</span>
         </p>
 

@@ -13,6 +13,7 @@
   --color-secundario: #e6edff;
   --color-fondo: #ffffff;
   --color-superficie: #ffffff;
+  --color-error: #8c0000;
   --color-borde: #000000;
 }
 /* Todos los enlaces subrayados, también en la navegación y en las fichas. */

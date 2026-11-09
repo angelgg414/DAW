@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* Práctica 6: avisos de errores y tabla generada por JavaScript. */
+[hidden] {
+  display: none !important;
+}
+
+.mensaje-error {
+  grid-column: 1 / -1;
+  display: block;
+  margin: 0.25rem 0 0;
+  font-weight: 700;
+  color: var(--color-error);
+}
+
+.campo-con-error input[aria-invalid="true"]:not([type="radio"]):not([type="checkbox"]) {
+  border: 2px solid var(--color-error);
+  outline-offset: 2px;
+}
+
+fieldset.campo-con-error {
+  border: 2px solid var(--color-error);
+}
+
+.tabla-costes {
+  max-width: none;
+  min-width: 39rem;
+  width: 100%;
+  table-layout: auto;
+}
+.tabla-costes th:first-child {
+  width: auto;
+}
+.tabla-costes th,
+.tabla-costes td {
+  padding: 0.55rem 0.45rem;
+  text-align: right;
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+}
+.tabla-costes thead th {
+  text-align: center;
+}
+.tabla-costes caption {
+  text-align: left;
+}

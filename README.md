@@ -1,3 +1,34 @@
+# Práctica 6: JavaScript
+
+Se han añadido las siguientes funciones, sin
+frameworks ni expresiones regulares:
+
+- `index.html` y `login.html`: validación de los dos campos de acceso.
+- `registro.html`: validación manual de usuario, contraseña, repetición, email
+  (incluyendo límites por subdominio), sexo y fecha válida con mayoría de edad
+  comprobada el día real de uso, no con una fecha fija.
+- `solicitarfolleto.html`: generación DOM nodo a nodo de 15 filas y cuatro
+  importes por fila según las tarifas, por bloques
+  de páginas. La tabla se muestra/oculta con un botón y no depende del formulario.
+- `js/validaciones.js`, `js/folleto.js` y `css/validacion.css`: lógica y estilo
+  separados del HTML. Los avisos se muestran junto a cada campo y se resalta el
+  control incorrecto; no se usan `alert()`, `pattern`, `type="email"` ni
+  `type="date"` para validar el registro.
+
+**Cómo probarla:** abrir `index.html` en Chrome o Firefox, probar el inicio de
+sesión vacío y con espacios, y repetir con `login.html`. En `registro.html`,
+introducir distintos valores inválidos para cada campo y verificar que aparece
+un mensaje claro. En `solicitarfolleto.html`, pulsar «Mostrar tabla de costes»:
+la primera fila debe ser 12,00 €, 12,60 €, 13,50 €, 14,10 € y la fila 15,
+36,80 €, 45,80 €, 59,30 €, 68,30 €.
+
+**Nota:** el proyecto sigue siendo una maqueta HTML estática: un acceso o registro
+válido navega a la zona privada de demostración, pero no autentica usuarios ni
+almacena sus datos. La validación en JavaScript no sustituye a la validación de
+servidor cuando se programe PHP.
+
+---
+
 # Práctica 5: CSS (2)
 
 Abre `index.html` en Mozilla Firefox y elige un estilo en **Ver > Estilo de
@@ -27,6 +58,8 @@ página** (pulsa Alt si no ves la barra de menús). Chrome no tiene esta opción
   enlaces 6,4:1), así que el de alto contraste se ha hecho para AAA (≥ 7:1).
 - `accesibilidad.html` es la declaración de accesibilidad, enlazada desde el
   pie de todas las páginas.
+
+---
 
 # Práctica 4: CSS (1)
 

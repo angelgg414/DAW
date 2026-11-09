@@ -23,6 +23,8 @@
   <link rel="alternate stylesheet" href="css/impresion.css" media="screen" title="Vista previa de impresión">
   <!-- Impresión: sin title para que se aplique siempre al imprimir -->
   <link rel="stylesheet" href="css/impresion.css" media="print">
+  <link rel="stylesheet" href="css/validacion.css">
+  <script src="js/validaciones.js" defer></script>
 </head>
 <body>
   <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
@@ -53,6 +55,25 @@
         </p>
       </form>
       <p><a href="busqueda.html">Búsqueda avanzada</a></p>
+    </section>
+
+    <section class="acceso-rapido">
+      <h2>Acceso de usuarios registrados</h2>
+      <p>Introduce tu nombre de usuario y contraseña para acceder.</p>
+      <form id="form-login-inicio" action="indexlogueado.html" method="post" novalidate>
+        <p class="campo">
+          <label for="inicio-usuario">Nombre de usuario *</label>
+          <input type="text" id="inicio-usuario" name="usuario" autocomplete="username">
+        </p>
+        <p class="campo">
+          <label for="inicio-clave">Contraseña *</label>
+          <input type="password" id="inicio-clave" name="clave" autocomplete="current-password">
+        </p>
+        <p class="acciones">
+          <button type="submit">Iniciar sesión</button>
+        </p>
+      </form>
+      <p>¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
     </section>
 
     <section class="anuncios">
