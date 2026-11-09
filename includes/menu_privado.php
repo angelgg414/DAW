@@ -1,7 +1,6 @@
 <?php
 /*
  * Menú lateral de la parte privada. Lo incluye inicio.php cuando $privada es true.
- * "Mis anuncios" y "Publicar anuncio" apuntan a 404.php hasta que se creen sus páginas (paso 9).
  */
 ?>
   <aside>
@@ -10,9 +9,11 @@
       <ul>
         <?= itemMenu('404.php', '&#xe7fd;', 'Mis datos') ?>
 
-        <?= itemMenu('404.php', '&#xe88e;', 'Mis anuncios') ?>
+        <?= itemMenu('misanuncios.php', '&#xe88e;', 'Mis anuncios') ?>
 
-        <?= itemMenu('404.php', '&#xe145;', 'Publicar anuncio') ?>
+        <?= itemMenu('crearanuncio.php', '&#xe145;', 'Publicar anuncio') ?>
+
+        <?= itemMenu('anadirfoto.php', '&#xe43e;', 'Añadir foto') ?>
 
         <?= itemMenu('mismensajes.php', '&#xe158;', 'Mis mensajes') ?>
 

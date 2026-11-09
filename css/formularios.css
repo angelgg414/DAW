@@ -108,3 +108,9 @@ input[type="reset"] {
   color: var(--color-principal);
   background: var(--color-superficie);
 }
+
+/* Botones deshabilitados (acciones que se implementarán en prácticas posteriores) */
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
