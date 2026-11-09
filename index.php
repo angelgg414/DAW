@@ -3,8 +3,7 @@ require_once __DIR__ . '/includes/funciones.php';
 
 $titulo       = 'Inicio';
 $descripcion  = 'PI - Pisos & Inmuebles: anuncios de venta y alquiler de viviendas, oficinas, locales y garajes';
-$estilosExtra = ['css/validacion.css'];
-$scriptsExtra = ['js/validaciones.js'];
+
 
 require_once __DIR__ . '/includes/cabecera.php';
 require_once __DIR__ . '/includes/inicio.php';
@@ -14,7 +13,7 @@ require_once __DIR__ . '/includes/inicio.php';
 
     <section class="busqueda-rapida">
       <h2>Búsqueda rápida</h2>
-      <form action="resultados.php" method="get">
+        <form id="form-login-inicio" action="control_acceso.php" method="post" novalidate>
         <p class="campo">
           <label for="busqueda-rapida">Municipio, barrio o calle</label>
           <input type="search" id="busqueda-rapida" name="q" placeholder="Ej.: Alicante, Playa de San Juan">
