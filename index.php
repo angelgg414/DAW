@@ -13,7 +13,7 @@ require_once __DIR__ . '/includes/inicio.php';
 
     <section class="busqueda-rapida">
       <h2>Búsqueda rápida</h2>
-        <form id="form-login-inicio" action="control_acceso.php" method="post" novalidate>
+      <form action="resultados.php" method="get">
         <p class="campo">
           <label for="busqueda-rapida">Municipio, barrio o calle</label>
           <input type="search" id="busqueda-rapida" name="q" placeholder="Ej.: Alicante, Playa de San Juan">
@@ -21,25 +21,6 @@ require_once __DIR__ . '/includes/inicio.php';
         </p>
       </form>
       <p><a href="busqueda.php">Búsqueda avanzada</a></p>
-    </section>
-
-    <section class="acceso-rapido">
-      <h2>Acceso de usuarios registrados</h2>
-      <p>Introduce tu nombre de usuario y contraseña para acceder.</p>
-      <form id="form-login-inicio" action="indexlogueado.php" method="post" novalidate>
-        <p class="campo">
-          <label for="inicio-usuario">Nombre de usuario *</label>
-          <input type="text" id="inicio-usuario" name="usuario" autocomplete="username">
-        </p>
-        <p class="campo">
-          <label for="inicio-clave">Contraseña *</label>
-          <input type="password" id="inicio-clave" name="clave" autocomplete="current-password">
-        </p>
-        <p class="acciones">
-          <button type="submit">Iniciar sesión</button>
-        </p>
-      </form>
-      <p>¿No tienes cuenta? <a href="registro.php">Regístrate</a></p>
     </section>
 
     <section class="anuncios">

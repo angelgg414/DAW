@@ -68,7 +68,8 @@ li {
 }
 dl {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  /* La columna de etiquetas se ajusta a su contenido (máx. 16rem) y el valor va justo al lado. */
+  grid-template-columns: fit-content(16rem) minmax(0, 1fr);
   gap: 0.5rem 1rem;
 }
 dt {

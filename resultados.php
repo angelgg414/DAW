@@ -22,7 +22,7 @@ require_once __DIR__ . '/includes/inicio.php';
       <p><a href="busqueda.php">Modificar la búsqueda</a></p>
 
       <form action="resultados.php" method="get">
-        <p class="campo">
+        <p class="campo campo-busqueda">
           <label for="nueva-busqueda">Nueva búsqueda rápida</label>
           <input type="search" id="nueva-busqueda" name="q" placeholder="Municipio, barrio o calle">
           <button type="submit">Buscar</button>
