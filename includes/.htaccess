@@ -1,0 +1,3 @@
+# Las piezas de la plantilla solo se usan desde otras páginas con require.
+# Nadie debe poder pedirlas directamente desde el navegador.
+Require all denied

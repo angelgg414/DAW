@@ -1,10 +1,23 @@
+<?php
+/*
+ * Cabecera común: DOCTYPE y <head>.
+ * Variables que define cada página antes de incluir este fichero:
+ *   $titulo        (string, obligatoria)  título de la página
+ *   $descripcion   (string, opcional)     contenido de la meta description
+ *   $estilosExtra  (array,  opcional)     hojas de estilo propias de la página
+ *   $scriptsExtra  (array,  opcional)     scripts propios de la página
+ */
+$descripcion  = $descripcion  ?? 'PI - Pisos & Inmuebles: anuncios de venta y alquiler de viviendas, oficinas, locales y garajes';
+$estilosExtra = $estilosExtra ?? [];
+$scriptsExtra = $scriptsExtra ?? [];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Descripción de la página">
-  <title>Título de la página - PI Pisos &amp; Inmuebles</title>
+  <meta name="description" content="<?= e($descripcion) ?>">
+  <title><?= e($titulo) ?> - PI Pisos &amp; Inmuebles</title>
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/estructura.css">
@@ -23,33 +36,10 @@
   <link rel="alternate stylesheet" href="css/impresion.css" media="screen" title="Vista previa de impresión">
   <!-- Impresión: sin title para que se aplique siempre al imprimir -->
   <link rel="stylesheet" href="css/impresion.css" media="print">
+<?php foreach ($estilosExtra as $css): ?>
+  <link rel="stylesheet" href="<?= e($css) ?>">
+<?php endforeach; ?>
+<?php foreach ($scriptsExtra as $js): ?>
+  <script src="<?= e($js) ?>" defer></script>
+<?php endforeach; ?>
 </head>
-<body>
-  <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
-
-  <header>
-    <p><a href="index.html">PI Pisos &amp; Inmuebles</a></p>
-    <nav aria-label="Navegación principal">
-      <ul>
-        <li><a href="index.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe88a;</span> Inicio</a></li>
-        <li><a href="busqueda.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe8b6;</span> Buscar</a></li>
-        <li><a href="registro.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe7fe;</span> Registrarse</a></li>
-        <li><a href="login.html"><span class="material-symbols-outlined" aria-hidden="true">&#xea77;</span> Iniciar sesión</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="contenido" tabindex="-1" class="aviso">
-    <h1>Título de la página</h1>
-    <p>Contenido de la página.</p>
-  </main>
-
-  <footer>
-    <p>Autores: Ángel García García y Diego Patiño Pérez</p>
-    <p>Desarrollo de Aplicaciones Web - Universidad de Alicante</p>
-    <p><small>&copy; 2026 PI - Pisos &amp; Inmuebles. Todos los derechos reservados.</small></p>
-    <p><a href="404.html">Aviso legal</a> · <a href="accesibilidad.html">Accesibilidad</a> · <a href="404.html"><span aria-hidden="true">&#9993;</span> Contacto</a></p>
-  </footer>
-
-</body>
-</html>

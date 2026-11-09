@@ -1,61 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
+<?php
+require_once __DIR__ . '/includes/funciones.php';
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Solicitud de folleto publicitario impreso - PI Pisos &amp; Inmuebles">
-  <title>Solicitar folleto - PI Pisos &amp; Inmuebles</title>
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/estructura.css">
-  <link rel="stylesheet" href="css/formularios.css">
-  <link rel="stylesheet" href="css/tablas.css">
-  <link rel="stylesheet" href="css/adaptativo.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
-  <!-- Estilo predeterminado (preferido) y estilos alternativos: Ver > Estilo de página en Firefox -->
-  <link rel="stylesheet" href="css/claro.css" media="screen" title="Estilo predeterminado">
-  <link rel="alternate stylesheet" href="css/noche.css" media="screen" title="Modo noche">
-  <link rel="alternate stylesheet" href="css/contraste.css" media="screen" title="Alto contraste">
-  <link rel="alternate stylesheet" href="css/claro.css" media="screen" title="Letra grande">
-  <link rel="alternate stylesheet" href="css/letragrande.css" media="screen" title="Letra grande">
-  <link rel="alternate stylesheet" href="css/contraste.css" media="screen" title="Alto contraste y letra grande">
-  <link rel="alternate stylesheet" href="css/letragrande.css" media="screen" title="Alto contraste y letra grande">
-  <link rel="alternate stylesheet" href="css/impresion.css" media="screen" title="Vista previa de impresión">
-  <!-- Impresión: sin title para que se aplique siempre al imprimir -->
-  <link rel="stylesheet" href="css/impresion.css" media="print">
-  <link rel="stylesheet" href="css/validacion.css">
-  <script src="js/folleto.js" defer></script>
-</head>
+$titulo       = 'Solicitar folleto';
+$descripcion  = 'Solicitud de folleto publicitario impreso - PI Pisos & Inmuebles';
+$privada      = true;
+$estilosExtra = ['css/validacion.css'];
+$scriptsExtra = ['js/folleto.js'];
 
-<body class="privada">
-  <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
-
-  <header>
-    <p><a href="indexlogueado.html">PI Pisos &amp; Inmuebles</a></p>
-
-    <nav aria-label="Menú principal">
-      <ul>
-        <li><a href="indexlogueado.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe88a;</span> Inicio</a></li>
-        <li><a href="busqueda.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe8b6;</span> Buscar</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <aside>
-    <h2>Hola, usuario</h2>
-    <nav aria-label="Menú de usuario">
-      <ul>
-        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe7fd;</span> Mis datos</a></li>
-        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe88e;</span> Mis anuncios</a></li>
-        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe145;</span> Publicar anuncio</a></li>
-        <li><a href="mismensajes.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe158;</span> Mis mensajes</a></li>
-        <li><a href="solicitarfolleto.html" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">&#xe8ad;</span> Solicitar folleto</a></li>
-        <li><a href="404.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe872;</span> Darme de baja</a></li>
-        <li><a href="index.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe9ba;</span> Cerrar sesión</a></li>
-      </ul>
-    </nav>
-  </aside>
+require_once __DIR__ . '/includes/cabecera.php';
+require_once __DIR__ . '/includes/inicio.php';
+?>
 
   <main id="contenido" tabindex="-1">
     <h1>Solicitud de impresión de folleto publicitario</h1>
@@ -135,7 +89,7 @@
 
       <p>Los campos marcados con (*) son obligatorios.</p>
 
-      <form action="respuestasolicitarfolleto.html" method="get">
+      <form action="respuestasolicitarfolleto.php" method="get">
 
         <p class="campo">
           <label for="texto-adicional">Texto adicional:</label>
@@ -276,13 +230,4 @@
 
   </main>
 
-  <footer>
-    <p>Autores: Ángel García García y Diego Patiño Pérez</p>
-    <p>Desarrollo de Aplicaciones Web - Universidad de Alicante</p>
-    <p><small>&copy; 2026 PI - Pisos &amp; Inmuebles. Todos los derechos reservados.</small></p>
-    <p><a href="404.html">Aviso legal</a> · <a href="accesibilidad.html">Accesibilidad</a> · <a href="404.html"><span aria-hidden="true">&#9993;</span> Contacto</a></p>
-  </footer>
-
-</body>
-
-</html>
+<?php require_once __DIR__ . '/includes/pie.php'; ?>

@@ -1,49 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Busca anuncios de venta y alquiler en PI - Pisos &amp; Inmuebles">
-  <title>Buscar anuncios - PI Pisos &amp; Inmuebles</title>
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/estructura.css">
-  <link rel="stylesheet" href="css/formularios.css">
-  <link rel="stylesheet" href="css/tablas.css">
-  <link rel="stylesheet" href="css/adaptativo.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
-  <!-- Estilo predeterminado (preferido) y estilos alternativos: Ver > Estilo de página en Firefox -->
-  <link rel="stylesheet" href="css/claro.css" media="screen" title="Estilo predeterminado">
-  <link rel="alternate stylesheet" href="css/noche.css" media="screen" title="Modo noche">
-  <link rel="alternate stylesheet" href="css/contraste.css" media="screen" title="Alto contraste">
-  <link rel="alternate stylesheet" href="css/claro.css" media="screen" title="Letra grande">
-  <link rel="alternate stylesheet" href="css/letragrande.css" media="screen" title="Letra grande">
-  <link rel="alternate stylesheet" href="css/contraste.css" media="screen" title="Alto contraste y letra grande">
-  <link rel="alternate stylesheet" href="css/letragrande.css" media="screen" title="Alto contraste y letra grande">
-  <link rel="alternate stylesheet" href="css/impresion.css" media="screen" title="Vista previa de impresión">
-  <!-- Impresión: sin title para que se aplique siempre al imprimir -->
-  <link rel="stylesheet" href="css/impresion.css" media="print">
-</head>
-<body>
-  <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
+<?php
+require_once __DIR__ . '/includes/funciones.php';
 
-  <header>
-    <p><a href="index.html">PI Pisos &amp; Inmuebles</a></p>
-    <nav aria-label="Navegación principal">
-      <ul>
-        <li><a href="index.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe88a;</span> Inicio</a></li>
-        <li><a href="busqueda.html" aria-current="page"><span class="material-symbols-outlined" aria-hidden="true">&#xe8b6;</span> Buscar</a></li>
-        <li><a href="registro.html"><span class="material-symbols-outlined" aria-hidden="true">&#xe7fe;</span> Registrarse</a></li>
-        <li><a href="login.html"><span class="material-symbols-outlined" aria-hidden="true">&#xea77;</span> Iniciar sesión</a></li>
-      </ul>
-    </nav>
-  </header>
+$titulo      = 'Buscar anuncios';
+$descripcion = 'Busca anuncios de venta y alquiler en PI - Pisos & Inmuebles';
+
+require_once __DIR__ . '/includes/cabecera.php';
+require_once __DIR__ . '/includes/inicio.php';
+?>
 
   <main id="contenido" tabindex="-1">
     <h1>Buscar anuncios</h1>
     <p>Rellena solo los criterios que te interesen: se mostrarán los anuncios que cumplan todos los indicados.</p>
 
-    <form action="resultados.html" method="get">
+    <form action="resultados.php" method="get">
 
       <fieldset>
         <legend>Tipo de anuncio</legend>
@@ -118,12 +87,4 @@
     </form>
   </main>
 
-  <footer>
-    <p>Autores: Ángel García García y Diego Patiño Pérez</p>
-    <p>Desarrollo de Aplicaciones Web - Universidad de Alicante</p>
-    <p><small>&copy; 2026 PI - Pisos &amp; Inmuebles. Todos los derechos reservados.</small></p>
-    <p><a href="404.html">Aviso legal</a> · <a href="accesibilidad.html">Accesibilidad</a> · <a href="404.html"><span aria-hidden="true">&#9993;</span> Contacto</a></p>
-  </footer>
-
-</body>
-</html>
+<?php require_once __DIR__ . '/includes/pie.php'; ?>
