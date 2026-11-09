@@ -3,6 +3,9 @@
  * Funciones comunes a todas las páginas del sitio.
  */
 
+// Zona horaria del sitio: las fechas no dependen de la configuración del servidor.
+date_default_timezone_set('Europe/Madrid');
+
 /**
  * Escapa un valor para mostrarlo de forma segura dentro de HTML (evita XSS).
  */
@@ -86,4 +89,68 @@ function obtenerSexos(): array
 function atributosError(?string $error, string $idCampo): string
 {
     return $error === null ? '' : ' aria-invalid="true" aria-describedby="error-' . e($idCampo) . '"';
+}
+
+/**
+ * Devuelve el entero positivo recibido en $origen[$nombre], o null si falta o no es válido.
+ */
+function idRecibido(array $origen, string $nombre): ?int
+{
+    $id = filter_var(textoRecibido($origen, $nombre), FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
+    return $id === false ? null : $id;
+}
+
+/**
+ * Tipos de mensaje que se pueden enviar a un anunciante: valor => texto visible.
+ */
+function obtenerTiposMensaje(): array
+{
+    return ['oferta' => 'Comunicar una oferta', 'informacion' => 'Más información', 'cita' => 'Solicitar una cita'];
+}
+
+/**
+ * Tipos de anuncio: valor => texto visible.
+ */
+function obtenerTiposAnuncio(): array
+{
+    return ['venta' => 'Venta', 'alquiler' => 'Alquiler'];
+}
+
+/**
+ * Tipos de vivienda: valor => texto visible.
+ */
+function obtenerTiposVivienda(): array
+{
+    return [
+        'garaje'     => 'Garaje',
+        'local'      => 'Local',
+        'obra-nueva' => 'Obra nueva',
+        'oficina'    => 'Oficina',
+        'vivienda'   => 'Vivienda',
+    ];
+}
+
+/**
+ * Importe en euros con formato español: formatearEuros(1234.5) => "1.234,50 €".
+ */
+function formatearEuros(float $importe, int $decimales = 2): string
+{
+    return number_format($importe, $decimales, ',', '.') . ' €';
+}
+
+/**
+ * Convierte una fecha AAAA-MM-DD en texto ("27 de septiembre de 2026").
+ * Devuelve null si la fecha no es válida (por ejemplo, 2026-02-31).
+ */
+function formatearFecha(string $fechaIso): ?string
+{
+    $fecha = DateTimeImmutable::createFromFormat('!Y-m-d', $fechaIso);
+    if ($fecha === false || $fecha->format('Y-m-d') !== $fechaIso) {
+        return null;
+    }
+
+    $meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio',
+              'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+
+    return $fecha->format('j') . ' de ' . $meses[(int) $fecha->format('n') - 1] . ' de ' . $fecha->format('Y');
 }
