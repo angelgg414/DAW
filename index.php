@@ -27,7 +27,7 @@ require_once __DIR__ . '/includes/inicio.php';
       <h2>Últimos anuncios</h2>
 
       <article class="anuncio">
-        <h3><a href="avisoacceso.php">Ático con terraza en el centro</a></h3>
+        <h3><a href="anuncio.php?id=1">Ático con terraza en el centro</a></h3>
         <figure>
           <img src="img/anuncio1.jpg" alt="Fachada del edificio del ático en Alicante" width="320" height="240">
         </figure>
@@ -37,7 +37,7 @@ require_once __DIR__ . '/includes/inicio.php';
       </article>
 
       <article class="anuncio">
-        <h3><a href="avisoacceso.php">Piso reformado a 200 m de la playa</a></h3>
+        <h3><a href="anuncio.php?id=2">Piso reformado a 200 m de la playa</a></h3>
         <figure>
           <img src="img/anuncio2.jpg" alt="Edificio de apartamentos junto a la playa de San Juan" width="320" height="240">
         </figure>
@@ -47,7 +47,7 @@ require_once __DIR__ . '/includes/inicio.php';
       </article>
 
       <article class="anuncio">
-        <h3><a href="avisoacceso.php">Oficina diáfana en zona financiera</a></h3>
+        <h3><a href="anuncio.php?id=3">Oficina diáfana en zona financiera</a></h3>
         <figure>
           <img src="img/anuncio3.jpg" alt="Edificio de oficinas acristalado en Valencia" width="320" height="240">
         </figure>
@@ -57,7 +57,7 @@ require_once __DIR__ . '/includes/inicio.php';
       </article>
 
       <article class="anuncio">
-        <h3><a href="avisoacceso.php">Local comercial a pie de calle</a></h3>
+        <h3><a href="anuncio.php?id=4">Local comercial a pie de calle</a></h3>
         <figure>
           <img src="img/anuncio4.jpg" alt="Local comercial con escaparate en Burdeos" width="320" height="240">
         </figure>
@@ -67,7 +67,7 @@ require_once __DIR__ . '/includes/inicio.php';
       </article>
 
       <article class="anuncio">
-        <h3><a href="avisoacceso.php">Plaza de garaje en el barrio de Alfama</a></h3>
+        <h3><a href="anuncio.php?id=5">Plaza de garaje en el barrio de Alfama</a></h3>
         <figure>
           <img src="img/anuncio5.jpg" alt="Puerta de acceso al garaje en Lisboa" width="320" height="240">
         </figure>
