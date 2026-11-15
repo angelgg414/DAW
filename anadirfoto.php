@@ -9,10 +9,15 @@ require_once __DIR__ . '/includes/arranque.php';
 exigirUsuario();
 require_once __DIR__ . '/includes/anuncios.php';
 
-$anuncios = obtenerAnuncios();
+$anuncios = obtenerAnunciosDeUsuario(usuarioActual());
 $id       = idRecibido($_GET, 'id');       // null si se llega desde el menú
 $fijado   = ($id !== null);
 $claveSeleccionada = $fijado ? claveAnuncioEjemplo($id) : null;
+
+// Solo se pueden añadir fotos a los anuncios propios
+if ($fijado && obtenerAnuncio($id)['usuario'] !== usuarioActual()) {
+    redirigir('misanuncios.php');
+}
 
 $titulo      = 'Añadir foto a un anuncio';
 $descripcion = 'Añade una foto a uno de tus anuncios en PI - Pisos & Inmuebles';

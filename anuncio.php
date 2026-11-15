@@ -13,6 +13,9 @@ if ($id === null) {
 }
 $anuncio = obtenerAnuncio($id);
 
+// Panel "Últimos anuncios visitados" (cookie): se anota antes de generar el HTML
+registrarVisita(claveAnuncioEjemplo($id));
+
 $titulo      = $anuncio['titulo'];
 $descripcion = $anuncio['titulo'] . ' en ' . $anuncio['ciudad'] . ' (' . $anuncio['tipo_anuncio'] . ')';
 

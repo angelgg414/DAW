@@ -35,6 +35,9 @@ $etiquetaSitio = in_array(basename($_SERVER['SCRIPT_NAME']), ['index.php', 'inde
       </ul>
     </nav>
   </header>
+<?php if (isset($_SESSION['ultimaVisita'])): ?>
+  <p class="ultima-visita">Bienvenido de nuevo, <?= e(usuarioActual()) ?>. Tu última visita fue el <?= date('d/m/Y', $_SESSION['ultimaVisita']) ?> a las <?= date('H:i', $_SESSION['ultimaVisita']) ?>.</p>
+<?php endif; ?>
 
 <?php
 if ($privada) {

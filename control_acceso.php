@@ -29,6 +29,11 @@ if (!credencialesValidas($usuario, $clave)) {
 // Acceso correcto: sesión del usuario (identificador nuevo, nombre y estilo)
 iniciarSesionUsuario($usuario);
 
+// "Recordarme en este equipo": cookie con token durante 90 días
+if (textoRecibido($_POST, 'recordar') === 'si') {
+    recordarUsuario($usuario);
+}
+
 // Si se venía de una página protegida, se vuelve a ella; si no, al menú del usuario
 $destino = $_SESSION['volver_a'] ?? 'indexlogueado.php';
 unset($_SESSION['volver_a']);

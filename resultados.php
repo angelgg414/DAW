@@ -130,7 +130,7 @@ require_once __DIR__ . '/includes/inicio.php';
       </article>
 
       <article class="anuncio">
-        <h3><a href="anuncio.php?id=2">Obra nueva con piscina comunitaria</a></h3>
+        <h3><a href="anuncio.php?id=6">Obra nueva con piscina comunitaria</a></h3>
         <figure>
           <img src="img/anuncio6.jpg" alt="Edificio de obra nueva en Elche" width="320" height="240">
         </figure>
@@ -147,13 +147,13 @@ require_once __DIR__ . '/includes/inicio.php';
         </details>
         <ul>
           <li><a href="tel:+34966000002">Llamar</a></li>
-          <li><a href="mensaje.php?id=2">Contactar</a></li>
+          <li><a href="mensaje.php?id=6">Contactar</a></li>
           <li><a href="404.php">Compartir</a></li>
         </ul>
       </article>
 
       <article class="anuncio">
-        <h3><a href="anuncio.php?id=3">Chalet adosado con jardín</a></h3>
+        <h3><a href="anuncio.php?id=7">Chalet adosado con jardín</a></h3>
         <figure>
           <img src="img/anuncio7.jpg" alt="Chalet adosado con tejado a dos aguas en Murcia" width="320" height="240">
         </figure>
@@ -170,13 +170,13 @@ require_once __DIR__ . '/includes/inicio.php';
         </details>
         <ul>
           <li><a href="tel:+34968000003">Llamar</a></li>
-          <li><a href="mensaje.php?id=3">Contactar</a></li>
+          <li><a href="mensaje.php?id=7">Contactar</a></li>
           <li><a href="404.php">Compartir</a></li>
         </ul>
       </article>
 
       <article class="anuncio">
-        <h3><a href="anuncio.php?id=4">Piso con vistas al mar en primera línea</a></h3>
+        <h3><a href="anuncio.php?id=8">Piso con vistas al mar en primera línea</a></h3>
         <figure>
           <img src="img/anuncio8.jpg" alt="Edificio de apartamentos en primera línea de playa en Benidorm" width="320" height="240">
         </figure>
@@ -193,7 +193,7 @@ require_once __DIR__ . '/includes/inicio.php';
         </details>
         <ul>
           <li><a href="tel:+34965000004">Llamar</a></li>
-          <li><a href="mensaje.php?id=4">Contactar</a></li>
+          <li><a href="mensaje.php?id=8">Contactar</a></li>
           <li><a href="404.php">Compartir</a></li>
         </ul>
       </article>

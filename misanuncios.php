@@ -7,7 +7,7 @@ require_once __DIR__ . '/includes/arranque.php';
 exigirUsuario();
 require_once __DIR__ . '/includes/anuncios.php';
 
-$anuncios = obtenerAnuncios();
+$anuncios = obtenerAnunciosDeUsuario(usuarioActual());
 
 $titulo      = 'Mis anuncios';
 $descripcion = 'Anuncios publicados en tu cuenta de PI - Pisos & Inmuebles';

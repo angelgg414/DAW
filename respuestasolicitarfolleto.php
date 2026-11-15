@@ -31,8 +31,8 @@ $resolucion = filter_var($datos['resolucion'], FILTER_VALIDATE_INT);
 $color      = $datos['impresion-color'];
 
 $errores = [];
-if ($idAnuncio === null) {
-    $errores[] = 'anuncio';
+if ($idAnuncio === null || obtenerAnuncio($idAnuncio)['usuario'] !== usuarioActual()) {
+    $errores[] = 'anuncio';   // el anuncio tiene que ser uno de los del usuario
 }
 if ($copias === false) {
     $errores[] = 'copias';

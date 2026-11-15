@@ -250,7 +250,7 @@ require_once __DIR__ . '/includes/inicio.php';
           <label for="anuncio">Anuncio: (*)</label>
           <select id="anuncio" name="anuncio"<?= atributosError($errorAnuncio, 'anuncio') ?>>
             <option value="">Selecciona uno de tus anuncios</option>
-            <?php foreach (obtenerAnuncios() as $anuncio): ?>
+            <?php foreach (obtenerAnunciosDeUsuario(usuarioActual()) as $anuncio): ?>
             <option value="<?= $anuncio['id'] ?>"<?= $datos['anuncio'] === (string) $anuncio['id'] ? ' selected' : '' ?>><?= e($anuncio['titulo']) ?></option>
             <?php endforeach; ?>
           </select>

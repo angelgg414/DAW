@@ -13,6 +13,11 @@ if ($id === null) {
 }
 $anuncio = obtenerAnuncio($id);
 
+// Solo se pueden ver aquí los anuncios propios
+if ($anuncio['usuario'] !== usuarioActual()) {
+    redirigir('misanuncios.php');
+}
+
 $titulo      = $anuncio['titulo'];
 $descripcion = 'Tu anuncio: ' . $anuncio['titulo'];
 $privada     = true;

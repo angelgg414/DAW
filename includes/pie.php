@@ -1,3 +1,9 @@
+<?php
+// Panel de últimos anuncios en las páginas públicas y públicas restringidas (no en las privadas)
+if (!($privada ?? false)) {
+    require __DIR__ . '/panel_ultimos.php';
+}
+?>
   <footer>
     <p>Autores: Ángel García García y Diego Patiño Pérez</p>
     <p>Desarrollo de Aplicaciones Web - Universidad de Alicante</p>

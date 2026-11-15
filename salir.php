@@ -1,9 +1,11 @@
 <?php
 /*
- * Salir: cierra la sesión del usuario y vuelve a la portada.
- * (En próximos pasos también borrará las cookies de "Recordarme" y de últimos anuncios.)
+ * Salir: olvida al usuario recordado (registro y cookie), borra los últimos anuncios visitados,
+ * cierra la sesión y vuelve a la portada.
  */
 require_once __DIR__ . '/includes/arranque.php';
 
+olvidarRecordado();
+borrarUltimos();
 cerrarSesion();
 redirigir('index.php');

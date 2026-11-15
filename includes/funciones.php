@@ -199,3 +199,19 @@ function obtenerEstilos(): array
         'contraste_letragrande' => ['titulo' => 'Alto contraste y letra grande', 'hojas' => ['css/contraste.css', 'css/letragrande.css']],
     ];
 }
+
+/**
+ * Opciones de las cookies del sitio: solo por HTTP (no accesibles desde JavaScript),
+ * no se envían desde otros sitios, solo por https si la conexión lo es,
+ * y válidas solo en la carpeta de la aplicación.
+ */
+function opcionesCookie(int $expira): array
+{
+    return [
+        'expires'  => $expira,
+        'path'     => rtrim(dirname($_SERVER['PHP_SELF']), '/\\') . '/',
+        'httponly' => true,
+        'samesite' => 'Lax',
+        'secure'   => conexionSegura(),
+    ];
+}

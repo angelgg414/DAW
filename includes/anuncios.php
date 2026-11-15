@@ -11,12 +11,21 @@ function obtenerAnuncios(): array
 }
 
 /*
- * Mientras no haya base de datos solo existen los anuncios 1 y 2:
- * un id impar corresponde al anuncio 1 y un id par al anuncio 2.
+ * Anuncio de los datos de ejemplo que corresponde a $id: el propio si existe; si no,
+ * como en la práctica 7, un id impar corresponde al anuncio 1 y uno par al anuncio 2.
  */
 function claveAnuncioEjemplo(int $id): int
 {
+    if (isset(obtenerAnuncios()[$id])) {
+        return $id;
+    }
     return ($id % 2 === 0) ? 2 : 1;
+}
+
+/* Anuncios publicados por $usuario (los que ve en "Mis anuncios"). */
+function obtenerAnunciosDeUsuario(string $usuario): array
+{
+    return array_filter(obtenerAnuncios(), fn ($anuncio) => $anuncio['usuario'] === $usuario);
 }
 
 /* Devuelve el anuncio que corresponde a $id (según su paridad). Conserva el id pedido. */
