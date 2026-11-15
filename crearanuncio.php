@@ -3,7 +3,7 @@
  * Crear anuncio (parte privada): formulario con los datos de un anuncio nuevo.
  * El guardado (base de datos) y la subida de la foto se harán en una práctica posterior.
  */
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 $titulo      = 'Publicar anuncio';
 $descripcion = 'Publica un anuncio de venta o alquiler en PI - Pisos & Inmuebles';

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 require_once __DIR__ . '/includes/anuncios.php';
 require_once __DIR__ . '/includes/folleto.php';
 

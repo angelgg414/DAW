@@ -3,7 +3,7 @@
  * Mis anuncios (parte privada): listado de los anuncios del usuario.
  * Sin sesiones ni base de datos todavía, se listan los anuncios de ejemplo.
  */
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 require_once __DIR__ . '/includes/anuncios.php';
 
 $anuncios = obtenerAnuncios();

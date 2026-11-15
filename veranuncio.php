@@ -3,7 +3,7 @@
  * Ver anuncio (parte privada): ficha completa de un anuncio del usuario,
  * con el enlace para añadirle una foto.
  */
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 require_once __DIR__ . '/includes/anuncios.php';
 
 $id = idRecibido($_GET, 'id');

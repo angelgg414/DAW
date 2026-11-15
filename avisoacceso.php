@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 $titulo      = 'Acceso restringido';
 $descripcion = 'Acceso restringido a usuarios registrados en PI - Pisos & Inmuebles';

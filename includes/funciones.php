@@ -47,7 +47,7 @@ function textoRecibido(array $origen, string $nombre): string
  */
 function redirigir(string $pagina, array $parametros = []): never
 {
-    $protocolo  = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    $protocolo  = conexionSegura() ? 'https' : 'http';
     $host       = $_SERVER['HTTP_HOST'];
     $directorio = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 
@@ -153,4 +153,13 @@ function formatearFecha(string $fechaIso): ?string
               'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 
     return $fecha->format('j') . ' de ' . $meses[(int) $fecha->format('n') - 1] . ' de ' . $fecha->format('Y');
+}
+
+
+/**
+ * Indica si la petición actual llega por https.
+ */
+function conexionSegura(): bool
+{
+    return !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
 }

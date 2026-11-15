@@ -1,15 +1,16 @@
 <?php
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 $titulo       = 'Iniciar sesión';
 $descripcion  = 'Accede a tu cuenta de PI - Pisos & Inmuebles';
 $estilosExtra = ['css/validacion.css'];
-// Mensaje de error que control_acceso.php envía por la URL (?error=...)
+// Mensaje de error que control_acceso.php deja en la flashdata
 $erroresAcceso = [
     'vacio'        => 'Debes escribir tu nombre de usuario y tu contraseña (no valen solo espacios ni tabuladores).',
     'credenciales' => 'El nombre de usuario o la contraseña no son correctos.',
 ];
-$mensajeError = $erroresAcceso[textoRecibido($_GET, 'error')] ?? null;
+$mensajeError  = $erroresAcceso[tomarFlash('error_acceso', '')] ?? null;
+$usuarioPrevio = tomarFlash('usuario_acceso', '');
 
 require_once __DIR__ . '/includes/cabecera.php';
 require_once __DIR__ . '/includes/inicio.php';
@@ -27,7 +28,7 @@ require_once __DIR__ . '/includes/inicio.php';
     <form id="form-login" action="control_acceso.php" method="post" novalidate>
       <p class="campo">
         <label for="login-usuario">Nombre de usuario</label>
-        <input type="text" id="login-usuario" name="usuario" autocomplete="username">
+        <input type="text" id="login-usuario" name="usuario" autocomplete="username" value="<?= e($usuarioPrevio) ?>">
       </p>
       <p class="campo">
         <label for="login-clave">Contraseña</label>

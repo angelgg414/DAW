@@ -1,25 +1,25 @@
 <?php
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 $titulo       = 'Registro';
 $descripcion  = 'Crea tu cuenta en PI - Pisos & Inmuebles para publicar anuncios';
 $estilosExtra = ['css/validacion.css'];
 
-// Datos que devuelve respuestaregistro.php cuando hay errores (nunca incluye contraseñas)
+// Errores y datos que respuestaregistro.php deja en la flashdata (nunca incluye contraseñas)
+$flash = tomarFlash('registro', ['errores' => [], 'datos' => []]);
+
 $datos = [];
 foreach (['usuario', 'email', 'sexo', 'nacimiento', 'ciudad', 'pais'] as $campo) {
-    $datos[$campo] = textoRecibido($_GET, $campo);
+    $datos[$campo] = $flash['datos'][$campo] ?? '';
 }
 
-// Códigos de error recibidos por la URL (?errores=usuario,coinciden): solo se aceptan los conocidos
 $mensajes = [
     'usuario'   => 'Escribe un nombre de usuario.',
     'clave'     => 'Escribe una contraseña.',
     'clave2'    => 'Repite la contraseña.',
     'coinciden' => 'Las contraseñas no coinciden.',
 ];
-$codigos = explode(',', textoRecibido($_GET, 'errores'));
-$errores = array_intersect_key($mensajes, array_flip($codigos));
+$errores = array_intersect_key($mensajes, array_flip($flash['errores']));
 
 $errorUsuario = $errores['usuario'] ?? null;
 $errorClave   = $errores['clave'] ?? null;

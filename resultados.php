@@ -5,7 +5,7 @@
  * Solo se muestran los criterios rellenados y válidos; los valores de las listas se traducen a texto.
  * Todavía no hay base de datos, así que los anuncios no se filtran.
  */
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 $criterios = [];
 

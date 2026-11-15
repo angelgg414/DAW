@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 $titulo      = 'Mis mensajes';
 $descripcion = 'Mensajes enviados y recibidos en tu cuenta de PI - Pisos & Inmuebles';

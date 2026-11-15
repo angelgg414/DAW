@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 // Si se llega desde "Modificar la búsqueda", los criterios anteriores vienen en la URL
 $datos = [];

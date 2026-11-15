@@ -6,7 +6,7 @@
  * el número de páginas y de fotos son valores ficticios; el resto sale del formulario.
  * Coste final = precio de un folleto × número de copias (como indica el enunciado).
  */
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 require_once __DIR__ . '/includes/anuncios.php';
 require_once __DIR__ . '/includes/folleto.php';
 

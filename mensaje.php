@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 require_once __DIR__ . '/includes/anuncios.php';
 
 // El anuncio al que se escribe llega por la URL (?id=...); sin un id válido no hay a quién escribir.

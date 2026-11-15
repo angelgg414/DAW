@@ -2,10 +2,10 @@
 /*
  * Respuesta del formulario de registro.
  * Valida con PHP: usuario, contraseña y repetir contraseña escritos, y contraseñas iguales.
- * Si hay errores, vuelve al formulario (estrategia 2) pasando por la URL los códigos de error
- * y los datos escritos, salvo las contraseñas, que nunca deben ir en una URL.
+ * Si hay errores, vuelve al formulario (estrategia 2) pasando como flashdata los códigos de error
+ * y los datos escritos, salvo las contraseñas, que el usuario debe volver a escribir.
  */
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     redirigir('registro.php');
@@ -38,7 +38,9 @@ if (trim($clave2) === '') {
 }
 
 if ($errores) {
-    redirigir('registro.php', $datos + ['errores' => implode(',', $errores)]);
+    // Vuelve al formulario con los errores y los datos escritos (nunca las contraseñas)
+    ponerFlash('registro', ['errores' => $errores, 'datos' => $datos]);
+    redirigir('registro.php');
 }
 
 // Textos visibles para los valores de las listas (si el valor no es válido, no se muestra)

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 $titulo      = 'Página no encontrada (404)';
 $descripcion = 'La página solicitada no existe en PI - Pisos & Inmuebles';

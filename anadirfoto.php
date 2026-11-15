@@ -5,7 +5,7 @@
  * - Desde "Mis anuncios" o "Ver anuncio" (?id=N): el anuncio llega seleccionado y no se puede cambiar.
  * La subida de la foto y su página de respuesta se harán en una práctica posterior.
  */
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 require_once __DIR__ . '/includes/anuncios.php';
 
 $anuncios = obtenerAnuncios();

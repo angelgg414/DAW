@@ -3,7 +3,7 @@
  * Detalle de un anuncio (parte pública). Se llega desde la portada o desde los resultados de búsqueda.
  * Hasta que haya base de datos, un id impar muestra el anuncio 1 y uno par el anuncio 2.
  */
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 require_once __DIR__ . '/includes/anuncios.php';
 
 $id = idRecibido($_GET, 'id');

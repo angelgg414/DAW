@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 $titulo       = 'Inicio';
 $descripcion  = 'PI - Pisos & Inmuebles: anuncios de venta y alquiler de viviendas, oficinas, locales y garajes';

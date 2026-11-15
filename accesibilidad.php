@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/funciones.php';
+require_once __DIR__ . '/includes/arranque.php';
 
 $titulo      = 'Declaración de accesibilidad';
 $descripcion = 'Declaración de accesibilidad de PI Pisos & Inmuebles';
