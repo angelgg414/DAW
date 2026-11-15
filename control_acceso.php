@@ -5,7 +5,6 @@
  * El error se pasa a la página siguiente como flashdata (en la sesión).
  */
 require_once __DIR__ . '/includes/arranque.php';
-require_once __DIR__ . '/includes/usuarios.php';
 
 // Solo se llega aquí enviando el formulario; cualquier otro acceso vuelve al login.
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -27,9 +26,8 @@ if (!credencialesValidas($usuario, $clave)) {
     redirigir('login.php');
 }
 
-// Acceso correcto: identificador de sesión nuevo (evita la fijación de sesión) y usuario en la sesión
-session_regenerate_id(true);
-$_SESSION['usuario'] = $usuario;
+// Acceso correcto: sesión del usuario (identificador nuevo, nombre y estilo)
+iniciarSesionUsuario($usuario);
 
 // Si se venía de una página protegida, se vuelve a ella; si no, al menú del usuario
 $destino = $_SESSION['volver_a'] ?? 'indexlogueado.php';

@@ -2,9 +2,9 @@
 /* Acceso a los usuarios registrados. Las páginas usan estas funciones, nunca el fichero de datos. */
 
 /**
- * Indica si $usuario existe y $clave coincide con su contraseña.
+ * Datos de un usuario (clave y estilo), o null si no existe.
  */
-function credencialesValidas(string $usuario, string $clave): bool
+function obtenerUsuario(string $usuario): ?array
 {
     $ruta = __DIR__ . '/../datos/usuarios.php';
     if (!is_readable($ruta)) {
@@ -12,5 +12,14 @@ function credencialesValidas(string $usuario, string $clave): bool
     }
     $usuarios = require $ruta;
 
-    return isset($usuarios[$usuario]) && password_verify($clave, $usuarios[$usuario]);
+    return $usuarios[$usuario] ?? null;
+}
+
+/**
+ * Indica si $usuario existe y $clave coincide con su contraseña.
+ */
+function credencialesValidas(string $usuario, string $clave): bool
+{
+    $datos = obtenerUsuario($usuario);
+    return $datos !== null && password_verify($clave, $datos['clave']);
 }

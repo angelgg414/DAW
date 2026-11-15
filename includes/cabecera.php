@@ -25,14 +25,12 @@ $scriptsExtra = $scriptsExtra ?? [];
   <link rel="stylesheet" href="css/tablas.css">
   <link rel="stylesheet" href="css/adaptativo.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&amp;display=block">
-  <!-- Estilo predeterminado (preferido) y estilos alternativos: Ver > Estilo de página en Firefox -->
-  <link rel="stylesheet" href="css/claro.css" media="screen" title="Estilo predeterminado">
-  <link rel="alternate stylesheet" href="css/noche.css" media="screen" title="Modo noche">
-  <link rel="alternate stylesheet" href="css/contraste.css" media="screen" title="Alto contraste">
-  <link rel="alternate stylesheet" href="css/claro.css" media="screen" title="Letra grande">
-  <link rel="alternate stylesheet" href="css/letragrande.css" media="screen" title="Letra grande">
-  <link rel="alternate stylesheet" href="css/contraste.css" media="screen" title="Alto contraste y letra grande">
-  <link rel="alternate stylesheet" href="css/letragrande.css" media="screen" title="Alto contraste y letra grande">
+  <!-- Estilo del usuario (preferido) y estilos alternativos: Ver > Estilo de página en Firefox -->
+<?php foreach (obtenerEstilos() as $claveEstilo => $datosEstilo): ?>
+<?php foreach ($datosEstilo['hojas'] as $hoja): ?>
+  <link rel="<?= $claveEstilo === estiloActual() ? 'stylesheet' : 'alternate stylesheet' ?>" href="<?= e($hoja) ?>" media="screen" title="<?= e($datosEstilo['titulo']) ?>">
+<?php endforeach; ?>
+<?php endforeach; ?>
   <link rel="alternate stylesheet" href="css/impresion.css" media="screen" title="Vista previa de impresión">
   <!-- Impresión: sin title para que se aplique siempre al imprimir -->
   <link rel="stylesheet" href="css/impresion.css" media="print">

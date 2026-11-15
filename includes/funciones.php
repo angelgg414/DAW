@@ -184,3 +184,18 @@ function saludo(string $nombre, ?DateTimeInterface $momento = null): string
 
     return $texto . ', ' . $nombre;
 }
+
+/**
+ * Estilos del sitio: clave => título (atributo title del <link>) y hojas que lo forman.
+ * 'claro' es el estilo predeterminado.
+ */
+function obtenerEstilos(): array
+{
+    return [
+        'claro'                 => ['titulo' => 'Estilo predeterminado',         'hojas' => ['css/claro.css']],
+        'noche'                 => ['titulo' => 'Modo noche',                    'hojas' => ['css/noche.css']],
+        'contraste'             => ['titulo' => 'Alto contraste',                'hojas' => ['css/contraste.css']],
+        'letragrande'           => ['titulo' => 'Letra grande',                  'hojas' => ['css/claro.css', 'css/letragrande.css']],
+        'contraste_letragrande' => ['titulo' => 'Alto contraste y letra grande', 'hojas' => ['css/contraste.css', 'css/letragrande.css']],
+    ];
+}

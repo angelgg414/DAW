@@ -81,3 +81,26 @@ function cerrarSesion(): void
 
     session_destroy();
 }
+
+/**
+ * Inicia la sesión de un usuario ya validado: identificador de sesión nuevo
+ * (evita la fijación de sesión), su nombre y su estilo.
+ */
+function iniciarSesionUsuario(string $usuario): void
+{
+    $datos = obtenerUsuario($usuario);
+
+    session_regenerate_id(true);
+    $_SESSION['usuario'] = $usuario;
+    $_SESSION['estilo']  = $datos['estilo'] ?? 'claro';
+}
+
+/**
+ * Estilo que se debe aplicar: el del usuario de la sesión o, si no hay, el predeterminado.
+ * Un valor desconocido se ignora.
+ */
+function estiloActual(): string
+{
+    $estilo = $_SESSION['estilo'] ?? 'claro';
+    return array_key_exists($estilo, obtenerEstilos()) ? $estilo : 'claro';
+}
