@@ -21,7 +21,7 @@
 
         <?= itemMenu('404.php', '&#xe872;', 'Darme de baja') ?>
 
-        <?= itemMenu('index.php', '&#xe9ba;', 'Cerrar sesión') ?>
+        <?= itemMenu('salir.php', '&#xe9ba;', 'Salir') ?>
 
       </ul>
     </nav>

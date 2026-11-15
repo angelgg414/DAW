@@ -31,4 +31,7 @@ if (!credencialesValidas($usuario, $clave)) {
 session_regenerate_id(true);
 $_SESSION['usuario'] = $usuario;
 
-redirigir('indexlogueado.php');
+// Si se venía de una página protegida, se vuelve a ella; si no, al menú del usuario
+$destino = $_SESSION['volver_a'] ?? 'indexlogueado.php';
+unset($_SESSION['volver_a']);
+redirigir($destino);

@@ -4,6 +4,7 @@
  * Sin sesiones ni base de datos todavía, se listan los anuncios de ejemplo.
  */
 require_once __DIR__ . '/includes/arranque.php';
+exigirUsuario();
 require_once __DIR__ . '/includes/anuncios.php';
 
 $anuncios = obtenerAnuncios();

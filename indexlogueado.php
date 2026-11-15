@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/arranque.php';
+exigirUsuario();
 
 $titulo      = 'Inicio';
 $descripcion = 'PI - Pisos & Inmuebles: anuncios de venta y alquiler de viviendas, oficinas, locales y garajes';

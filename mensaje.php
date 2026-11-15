@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/arranque.php';
+exigirUsuario();
 require_once __DIR__ . '/includes/anuncios.php';
 
 // El anuncio al que se escribe llega por la URL (?id=...); sin un id válido no hay a quién escribir.

@@ -4,6 +4,7 @@
  * El guardado (base de datos) y la subida de la foto se harán en una práctica posterior.
  */
 require_once __DIR__ . '/includes/arranque.php';
+exigirUsuario();
 
 $titulo      = 'Publicar anuncio';
 $descripcion = 'Publica un anuncio de venta o alquiler en PI - Pisos & Inmuebles';

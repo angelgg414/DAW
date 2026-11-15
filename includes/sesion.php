@@ -41,3 +41,43 @@ function tomarFlash(string $clave, mixed $porDefecto = null): mixed
     unset($_SESSION['flash'][$clave]);
     return $valor;
 }
+
+/**
+ * Exige un usuario identificado. Si no lo hay, recuerda la página pedida (solo GET),
+ * deja un aviso como flashdata y redirige al formulario de acceso.
+ */
+function exigirUsuario(): void
+{
+    if (usuarioActual() !== null) {
+        return;
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        // Solo el nombre del fichero y sus parámetros: nunca una URL externa (evita redirecciones abiertas)
+        $consulta = $_SERVER['QUERY_STRING'] ?? '';
+        $_SESSION['volver_a'] = basename($_SERVER['PHP_SELF']) . ($consulta !== '' ? '?' . $consulta : '');
+    }
+
+    ponerFlash('error_acceso', 'restringido');
+    redirigir('login.php');
+}
+
+/**
+ * Cierra la sesión por completo: vacía los datos, borra la cookie de sesión y destruye la sesión.
+ */
+function cerrarSesion(): void
+{
+    $_SESSION = [];
+
+    // Para borrar una cookie se envía de nuevo con los mismos parámetros y una fecha ya pasada
+    $parametros = session_get_cookie_params();
+    setcookie(session_name(), '', [
+        'expires'  => time() - 42000,
+        'path'     => $parametros['path'],
+        'httponly' => $parametros['httponly'],
+        'samesite' => $parametros['samesite'],
+        'secure'   => $parametros['secure'],
+    ]);
+
+    session_destroy();
+}

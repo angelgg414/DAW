@@ -6,6 +6,7 @@
  * La subida de la foto y su página de respuesta se harán en una práctica posterior.
  */
 require_once __DIR__ . '/includes/arranque.php';
+exigirUsuario();
 require_once __DIR__ . '/includes/anuncios.php';
 
 $anuncios = obtenerAnuncios();

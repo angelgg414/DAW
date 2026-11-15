@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__ . '/includes/arranque.php';
 
+// Si ya ha iniciado sesión, no tiene sentido mostrar el formulario
+if (usuarioActual() !== null) {
+    redirigir('indexlogueado.php');
+}
+
 $titulo       = 'Iniciar sesión';
 $descripcion  = 'Accede a tu cuenta de PI - Pisos & Inmuebles';
 $estilosExtra = ['css/validacion.css'];
@@ -8,6 +13,7 @@ $estilosExtra = ['css/validacion.css'];
 $erroresAcceso = [
     'vacio'        => 'Debes escribir tu nombre de usuario y tu contraseña (no valen solo espacios ni tabuladores).',
     'credenciales' => 'El nombre de usuario o la contraseña no son correctos.',
+    'restringido'  => 'Debes iniciar sesión para acceder a esa página.',
 ];
 $mensajeError  = $erroresAcceso[tomarFlash('error_acceso', '')] ?? null;
 $usuarioPrevio = tomarFlash('usuario_acceso', '');

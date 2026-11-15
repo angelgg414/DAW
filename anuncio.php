@@ -4,6 +4,7 @@
  * Hasta que haya base de datos, un id impar muestra el anuncio 1 y uno par el anuncio 2.
  */
 require_once __DIR__ . '/includes/arranque.php';
+exigirUsuario();
 require_once __DIR__ . '/includes/anuncios.php';
 
 $id = idRecibido($_GET, 'id');
