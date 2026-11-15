@@ -163,3 +163,24 @@ function conexionSegura(): bool
 {
     return !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
 }
+
+/**
+ * Saludo según la franja horaria: "Buenos días, Pepito", "Hola, Pepito"...
+ * $momento es opcional (por defecto, ahora); permite comprobar cada franja.
+ */
+function saludo(string $nombre, ?DateTimeInterface $momento = null): string
+{
+    $hora = (int) ($momento ?? new DateTimeImmutable())->format('G');
+
+    if ($hora >= 6 && $hora < 12) {
+        $texto = 'Buenos días';
+    } elseif ($hora >= 12 && $hora < 16) {
+        $texto = 'Hola';
+    } elseif ($hora >= 16 && $hora < 20) {
+        $texto = 'Buenas tardes';
+    } else {
+        $texto = 'Buenas noches';   // de 20:00 a 05:59
+    }
+
+    return $texto . ', ' . $nombre;
+}

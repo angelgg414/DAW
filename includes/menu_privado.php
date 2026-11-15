@@ -4,7 +4,7 @@
  */
 ?>
   <aside>
-    <h2>Hola, usuario</h2>
+    <h2><?= e(saludo(usuarioActual() ?? '')) ?></h2>
     <nav aria-label="Menú de usuario">
       <ul>
         <?= itemMenu('404.php', '&#xe7fd;', 'Mis datos') ?>
